@@ -1,0 +1,22 @@
+<section class="grid md:grid-cols-3 gap-6">
+{% set plans = [
+  { name: "Essentiel", price: "€299",
+    features: ["Audit de base","1–2 automatisations","Notion simple","Support 7 jours"] },
+  { name: "Pro", price: "€690",
+    features: ["Audit complet","3–5 automatisations","Mini-CRM Notion","1 mois maintenance"] },
+  { name: "Premium", price: "Sur devis",
+    features: ["Conseil stratégique","Automatisations avancées","CRM + Reporting","Formation + support"] }
+] %}
+{% for p in plans %}
+  <div class="card">
+    <h3 class="text-xl font-semibold">{{ p.name }}</h3>
+    <p class="text-3xl mt-2">{{ p.price }}</p>
+    <ul class="mt-4 space-y-2">
+      {% for f in p.features %}
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>{{ f }}</li>
+      {% endfor %}
+    </ul>
+    <a href="/contact/" class="btn-primary mt-6">Demander un devis</a>
+  </div>
+{% endfor %}
+</section>

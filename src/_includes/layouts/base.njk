@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title or site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}" />
+  <link rel="stylesheet" href="/assets/main.css" />
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <header class="border-b bg-white/80 backdrop-blur">
+    <nav class="container-xl flex items-center justify-between h-16">
+      <a href="/" class="font-semibold">{{ site.name }}</a>
+      <ul class="flex items-center gap-6">
+        {% for item in site.navigation %}
+        <li><a href="{{ item.href }}" class="hover:text-primary-600">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container-xl py-10 min-h-[70vh]">
+    {{ content | safe }}
+  </main>
+
+  <footer class="mt-16 border-t py-10 text-sm text-slate-500">
+    <div class="container-xl flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+      <p>© {{ "now" | date("yyyy") }} {{ site.name }}. Tous droits réservés.</p>
+      <p><a href="/" class="hover:text-primary-600">Mentions légales</a></p>
+    </div>
+  </footer>
+</body>
+</html>

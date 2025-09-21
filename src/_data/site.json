@@ -1,0 +1,13 @@
+
+{
+  "name": "AutoFlowGP",
+  "url": "https://www.autoflowgp.com",
+  "description": "Automatisation de workflows et intégrations no-code pour PME et créateurs.",
+  "navigation": [
+    { "label": "Accueil", "href": "/" },
+    { "label": "Services", "href": "/services/" },
+    { "label": "À propos", "href": "/about/" },
+    { "label": "Blog", "href": "/blog/" },
+    { "label": "Contact", "href": "/contact/" }
+  ]
+}

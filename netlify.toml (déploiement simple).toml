@@ -1,0 +1,13 @@
+## 4) netlify.toml (déploiement simple)
+
+```toml
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

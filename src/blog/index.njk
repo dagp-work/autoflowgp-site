@@ -1,0 +1,12 @@
+
+---
+<h1 class="text-3xl font-bold">Blog</h1>
+<ul class="mt-6 space-y-4">
+  {% for post in collections.posts %}
+  <li>
+    <a href="{{ post.url }}" class="text-lg font-semibold hover:text-primary-600">{{ post.data.title }}</a>
+    <p class="text-sm text-slate-500">{{ post.date | date("dd/MM/yyyy") }}</p>
+  </li>
+  {% endfor %}
+</ul>
+```
