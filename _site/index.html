@@ -4,14 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Accueil</title>
-  <meta name="description" content="Automatisation de workflows et intégrations no-code pour PME et créateurs." />
+  <meta name="description" content="Automatisation de workflows et intégrations no-code pour pros." />
   <link rel="stylesheet" href="/assets/main.css" />
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-slate-50 text-slate-800">
   <header class="border-b bg-white/80 backdrop-blur">
     <nav class="container-xl flex items-center justify-between h-16">
-      <a href="/" class="font-semibold">AutoFlowGP</a>
+      <a  href="/" class="flex items-center gap-2">
+  <img src="/assets/img/logo.png" alt="AutoFlowGP" class="h-16 w-auto" />
+  <span class="font-semibold">AutoFlowGP</span>
+      </a>
+
       <ul class="flex items-center gap-6">
         
         <li><a href="/" class="hover:text-primary-600">Accueil</a></li>
@@ -30,9 +34,132 @@
 
   <main class="container-xl py-10 min-h-[70vh]">
     <section class="py-10">
-  <h1 class="text-4xl font-bold">Bienvenue sur AutoFlowGP</h1>
-  <p class="mt-3 text-slate-600">Automatisation de workflows et intégrations no-code.</p>
-  <a href="/services/" class="btn-primary mt-6 inline-block">Voir nos packs</a>
+  <h1 class="text-4xl font-bold">Gagnez du temps. Réduisez les erreurs.</h1>
+  <p class="mt-3 text-slate-600">AutoFlowGP connecte Make, Stripe, Notion et Webflow pour exécuter vos tâches 24/7.</p>
+  <div class="mt-6 space-x-3">
+    <a href="/services/" class="btn-primary inline-block">Voir les packs</a>
+    <a href="/contact/" class="btn-ghost inline-block">Parler de votre cas</a>
+  </div>
+</section>
+
+<!-- Confiance / stack -->
+<section class="py-6 border-y border-slate-200/10">
+  <ul class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-400">
+    <li>Make</li><li>Stripe</li><li>Notion</li><li>Webflow</li><li>Zapier</li>
+  </ul>
+</section>
+
+<!-- Bénéfices clés -->
+<section class="py-10 grid md:grid-cols-3 gap-6">
+  <div class="rounded-xl border border-slate-200/15 bg-slate-900 p-5">
+    <h3 class="font-semibold">Temps gagné</h3>
+    <p class="mt-2 text-slate-600">Moins d’opérations manuelles. Plus d’exécution.</p>
+  </div>
+  <div class="rounded-xl border border-slate-200/15 bg-slate-900 p-5">
+    <h3 class="font-semibold">Moins d’erreurs</h3>
+    <p class="mt-2 text-slate-600">Contrôles, relances et logs intégrés.</p>
+  </div>
+  <div class="rounded-xl border border-slate-200/15 bg-slate-900 p-5">
+    <h3 class="font-semibold">Visibilité</h3>
+    <p class="mt-2 text-slate-600">Dashboards Notion et alertes en temps réel.</p>
+  </div>
+</section>
+
+<!-- Ce que nous automatisons -->
+<section class="py-4">
+  <h2 class="text-xl font-semibold">Ce que nous automatisons</h2>
+  <ul class="mt-4 grid sm:grid-cols-2 gap-2 text-slate-700 list-disc pl-6">
+    <li>Emails et demandes clients</li>
+    <li>Devis, factures et paiements (Stripe)</li>
+    <li>Commandes et rendez-vous</li>
+    <li>Synchronisation CRM / Notion</li>
+    <li>Reporting, alertes et logs</li>
+    <li>Programmation des publications sociales</li>
+  </ul>
+</section>
+
+<!-- Méthode -->
+<section class="py-10">
+  <h2 class="text-xl font-semibold">Méthode</h2>
+  <ol class="mt-4 grid md:grid-cols-4 gap-4 text-slate-600">
+    <li class="rounded-lg border border-slate-200/15 p-4"><strong>1. Audit</strong><br>Diagnostic et priorisation.</li>
+    <li class="rounded-lg border border-slate-200/15 p-4"><strong>2. Mise en place</strong><br>Workflows Make/Zapier, intégrations.</li>
+    <li class="rounded-lg border border-slate-200/15 p-4"><strong>3. Tests</strong><br>Contrôles, relances, documentation.</li>
+    <li class="rounded-lg border border-slate-200/15 p-4"><strong>4. Suivi</strong><br>Support et maintenance.</li>
+  </ol>
+</section>
+
+<!-- Teaser prix -->
+<section class="py-10">
+  <h2 class="text-xl font-semibold">Packs</h2>
+  <p class="text-slate-600 mt-2">Choisissez un point d’entrée. Nous adaptons ensuite.</p>
+  <section class="grid md:grid-cols-3 gap-6">
+
+
+  <div class="card">
+    <h3 class="text-xl font-semibold">Starter</h3>
+    <p class="text-3xl mt-2">€150 - 250</p>
+    <ul class="mt-4 space-y-2">
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>Audit de base</li>
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>1–2 automatisations</li>
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>Notion simple</li>
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>Support 7 jours</li>
+      
+    </ul>
+    <a href="/contact/" class="btn-primary mt-6">Demander un devis</a>
+  </div>
+
+  <div class="card">
+    <h3 class="text-xl font-semibold">Pro</h3>
+    <p class="text-3xl mt-2">€400 - 600</p>
+    <ul class="mt-4 space-y-2">
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>Audit complet</li>
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>3–5 automatisations</li>
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>Mini-CRM Notion</li>
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>1 mois maintenance</li>
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>Formation courte</li>
+      
+    </ul>
+    <a href="/contact/" class="btn-primary mt-6">Demander un devis</a>
+  </div>
+
+  <div class="card">
+    <h3 class="text-xl font-semibold">Premium</h3>
+    <p class="text-3xl mt-2">€800 - 1200</p>
+    <ul class="mt-4 space-y-2">
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>Conseil stratégique</li>
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>Automatisations avancées</li>
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>CRM + Reporting</li>
+      
+      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>Formation complète + support, </li>
+      
+    </ul>
+    <a href="/contact/" class="btn-primary mt-6">Demander un devis</a>
+  </div>
+
+</section>
+
+</section>
+
+<!-- Sur-mesure -->
+<section class="py-10">
+  <h2 class="text-xl font-semibold">Projet sur-mesure</h2>
+  <p class="mt-3 text-slate-700">
+    Vous avez une inspiration précise ou des demandes complexes&nbsp;? Nous concevons un projet dédié : cadrage, maquette, itérations, livraison et suivi.
+  </p>
+  <a href="/contact/" class="btn-primary mt-4 inline-block">Démarrer un cadrage</a>
 </section>
 
   </main>
