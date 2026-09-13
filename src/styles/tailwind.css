@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* utilitaires perso */
+/* Mise en page */
 .container-xl { @apply max-w-6xl mx-auto px-4; }
-.btn-primary { @apply inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium px-5 py-3 rounded-xl transition; }
 .card { @apply rounded-2xl shadow-md p-6 bg-white; }
 
 /* Boutons */
-.btn-primary{@apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700}
-.btn-ghost{@apply border border-slate-200/20 text-slate-100 px-4 py-2 rounded-lg hover:bg-slate-800}
-
+.btn-primary { @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700; }
+.btn-ghost { @apply border border-slate-200/20 text-slate-100 px-4 py-2 rounded-lg hover:bg-slate-800; }

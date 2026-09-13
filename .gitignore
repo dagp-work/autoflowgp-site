@@ -1,0 +1,14 @@
+# Dépendances
+node_modules/
+
+# Build Eleventy et CSS compilé
+_site/
+public/assets/main.css
+
+# Système
+.DS_Store
+
+# Secrets et config locale
+.env
+.env.*
+.netlify/
