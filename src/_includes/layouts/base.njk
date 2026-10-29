@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ title or site.name }}</title>
   <meta name="description" content="{{ description or site.description }}" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   <link rel="stylesheet" href="/assets/main.css" />
   <script defer src="/assets/js/alpine.min.js"></script>
 </head>
-<body class="bg-slate-50 text-slate-800">
-  <header x-data="{ open: false }" @keydown.escape.window="open = false" class="sticky top-0 z-50 border-b bg-white/80 backdrop-blur">
+<body class="bg-slate-50 text-slate-800 dark:bg-black dark:text-slate-200">
+  <header x-data="{ open: false }" @keydown.escape.window="open = false" class="sticky top-0 z-50 border-b bg-white/80 backdrop-blur dark:bg-black/80">
     <nav class="container-xl flex items-center justify-between h-16" aria-label="Navigation principale">
       <a href="/" class="flex items-center gap-2">
         <img src="/assets/img/logo.png" alt="AutoFlowGP" class="h-16 w-auto" />
@@ -19,12 +22,12 @@
       <!-- Menu ordinateur -->
       <ul class="hidden md:flex items-center gap-6">
         {% for item in site.navigation %}
-        <li><a href="{{ item.href }}" class="hover:text-primary-600{% if page.url == item.href %} text-primary-600 font-medium{% endif %}">{{ item.label }}</a></li>
+        <li><a href="{{ item.href }}" class="hover:text-primary-700 dark:hover:text-primary-300{% if page.url == item.href %} text-primary-700 dark:text-primary-400 font-medium{% endif %}">{{ item.label }}</a></li>
         {% endfor %}
       </ul>
 
       <!-- Bouton menu mobile -->
-      <button type="button" @click="open = !open" class="md:hidden -mr-2 p-2 rounded-lg hover:bg-slate-100"
+      <button type="button" @click="open = !open" class="md:hidden -mr-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-800"
               :aria-expanded="open.toString()" aria-expanded="false" aria-controls="menu-mobile" aria-label="Ouvrir le menu">
         <svg x-show="!open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
         <svg x-show="open" x-cloak class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
@@ -33,9 +36,9 @@
 
     <!-- Menu mobile -->
     <ul id="menu-mobile" x-show="open" x-cloak x-transition.opacity @click.outside="open = false"
-        class="md:hidden border-t bg-white container-xl py-2">
+        class="md:hidden border-t bg-white dark:bg-black container-xl py-2">
       {% for item in site.navigation %}
-      <li><a href="{{ item.href }}" @click="open = false" class="block py-3 text-lg hover:text-primary-600{% if page.url == item.href %} text-primary-600 font-medium{% endif %}">{{ item.label }}</a></li>
+      <li><a href="{{ item.href }}" @click="open = false" class="block py-3 text-lg hover:text-primary-700 dark:hover:text-primary-300{% if page.url == item.href %} text-primary-700 dark:text-primary-400 font-medium{% endif %}">{{ item.label }}</a></li>
       {% endfor %}
     </ul>
   </header>
@@ -44,10 +47,10 @@
     {{ content | safe }}
   </main>
 
-  <footer class="mt-16 border-t py-10 text-sm text-slate-500">
+  <footer class="mt-16 border-t py-10 text-sm text-slate-500 dark:text-slate-400">
     <div class="container-xl flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
       <p>© {{ "now" | date("yyyy") }} {{ site.name }}. Tous droits réservés.</p>
-      <p><a href="/" class="hover:text-primary-600">Mentions légales</a></p>
+      <p><a href="/" class="hover:text-primary-700 dark:hover:text-primary-300">Mentions légales</a></p>
     </div>
   </footer>
 </body>

@@ -28,41 +28,49 @@ Source de vérité technique : `tailwind.config.js` et `src/styles/tailwind.css`
 
 ## Couleurs
 
-| Rôle | Token Tailwind | Valeur |
+Le site a **deux thèmes** qui suivent le réglage de l'appareil (`prefers-color-scheme`, variantes `dark:` de Tailwind). Toute couleur claire ajoutée doit avoir sa variante `dark:` — sinon le texte devient illisible en mode sombre.
+
+| Rôle | Clair | Sombre |
 |---|---|---|
-| Action principale | `primary-600` | `#3B82F6` |
-| Survol action | `primary-700` | `#2563EB` |
-| Texte / fond sombre | `dark` | `#0F172A` |
-| Fond de page | `slate-50` | — |
-| Texte courant | `slate-800`, secondaire `slate-600`, discret `slate-500` | — |
-| Cartes | `bg-white` (via `.card`) | — |
+| Fond de page | `bg-slate-50` | `dark:bg-black` (fond noir = celui du logo) |
+| Texte principal | `text-slate-800` | `dark:text-slate-100` (corps : `dark:text-slate-200`) |
+| Texte courant | `text-slate-700` | `dark:text-slate-300` |
+| Texte secondaire | `text-slate-600` | `dark:text-slate-400` |
+| Texte discret | `text-slate-500` | `dark:text-slate-400` |
+| Lien | `text-primary-700` (`#2563EB`) | `dark:text-primary-400` (`#60A5FA`) |
+| Lien au survol | `hover:text-primary-800` | `dark:hover:text-primary-300` |
+| Bordures | `border` (gris par défaut) | automatique (`neutral-800` dans `tailwind.css`) |
+| Texte d'article | `prose` | `dark:prose-invert` |
+
+Ne pas utiliser `text-primary-600` (`#3B82F6`) pour du texte sur fond clair : contraste insuffisant (3,7 pour 4,5 requis). Il reste valable pour des pastilles ou décorations.
+Les boutons `.btn-primary` sont identiques dans les deux thèmes (`primary-700`, survol `primary-800`, texte blanc).
 
 **Palette du logo** (`public/assets/img/logo.png`, dégradé sur fond noir) : turquoise `#18DCA5` → vert d'eau `#60C5A0` → corail `#EB8E6E` → orange `#F29D56` → jaune `#EECB2C`.
 Elle n'est **pas encore** reprise dans le site (qui est en bleu). Ne pas mélanger les deux de sa propre initiative : c'est une décision de marque à faire valider par l'utilisateur. Pour des supports hors site (réseaux, print), la palette logo est la plus distinctive.
 
 ## Classes maison (à réutiliser, ne pas réinventer)
 
+Définies dans `src/styles/tailwind.css`, elles gèrent déjà les deux thèmes : pas besoin d'ajouter de `dark:`.
+
 | Classe | Usage |
 |---|---|
 | `.container-xl` | Largeur de contenu (déjà posée par le layout sur `<main>`) |
 | `.btn-primary` | Bouton principal (CTA) |
-| `.btn-ghost` | Bouton secondaire |
-| `.card` | Bloc blanc arrondi avec ombre |
+| `.btn-ghost` | Bouton secondaire (bordure) |
+| `.card` | Bloc arrondi : blanc avec ombre en clair, gris foncé avec liseré en sombre |
+| `.field` | Champ de formulaire (`input`, `textarea`) |
 
-Pièges connus (signalés par `verif-avant-deploy`) :
-- `.btn` **n'existe pas** → utiliser `.btn-primary` ou `.btn-ghost`.
-- `prose` / `prose-invert` **n'ont aucun effet** : le plugin `@tailwindcss/typography` n'est pas installé.
-- `.btn-primary` est défini deux fois dans `tailwind.css` ; la seconde définition (`bg-blue-600`, `rounded-lg`) l'emporte.
-- `.btn-ghost` est conçu pour un fond sombre (texte `slate-100`) : peu lisible sur le fond clair actuel.
-- Les cartes « Bénéfices » de l'accueil utilisent `bg-slate-900` avec du texte `slate-600` : contraste insuffisant.
+Pièges connus :
+- `.btn` **n'existe pas** → `.btn-primary` ou `.btn-ghost` (`verif-avant-deploy` le signale).
+- Une couleur sans variante `dark:` n'est pas signalée par le script : vérifier visuellement en mode sombre (Playwright `colorScheme: 'dark'`, ou réglage sombre du téléphone).
 
 ## Mise en page
 
-- Layout de référence : `layouts/base.njk` (le doublon `layout.njk` est identique ; préférer `layouts/base.njk` pour tout nouveau contenu).
-- Un seul `<h1>` par page, `text-3xl font-bold` (accueil : `text-4xl`).
+- Layout de référence : `layouts/base.njk` (`layout.njk` le réutilise) ; articles : `layouts/post.njk`.
+- Un seul `<h1>` par page, `text-3xl font-bold` (accueil et landings : `text-4xl`).
 - Sections : `<section class="mt-12">` avec `<h2 class="text-xl font-semibold">`.
 - Grilles responsives : `grid md:grid-cols-2|3 gap-6`.
-- Mobile d'abord : vérifier que rien ne déborde sous 375 px (la nav actuelle a 5 liens sur une ligne, à surveiller).
+- Mobile d'abord : rien ne doit déborder à 375 px (`npm run check` ne le teste pas : vérifier dans le navigateur).
 
 ## Supports hors site
 

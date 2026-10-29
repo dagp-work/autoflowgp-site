@@ -1,18 +1,18 @@
 ---
 layout: layouts/base.njk
 ---
-<article class="prose prose-slate max-w-3xl mx-auto">
-  <p class="text-sm text-slate-500 not-prose">
-    <a href="/blog/" class="hover:text-primary-600">← Blog</a> · {{ page.date | date("dd/MM/yyyy") }}
+<article class="prose dark:prose-invert prose-slate max-w-3xl mx-auto">
+  <p class="text-sm text-slate-500 dark:text-slate-400 not-prose">
+    <a href="/blog/" class="hover:text-primary-700 dark:hover:text-primary-300">← Blog</a> · {{ page.date | date("dd/MM/yyyy") }}
   </p>
   {{ content | safe }}
 </article>
 
 <aside class="max-w-3xl mx-auto mt-12 card">
   <h2 class="text-xl font-semibold">Vous voulez gagner ce temps-là ?</h2>
-  <p class="mt-2 text-slate-600">Décrivez-nous vos tâches répétitives : nous vous disons ce qui peut être automatisé.</p>
+  <p class="mt-2 text-slate-600 dark:text-slate-400">Décrivez-nous vos tâches répétitives : nous vous disons ce qui peut être automatisé.</p>
   <div class="mt-4 flex flex-wrap gap-3">
     <a href="/contact/" class="btn-primary">Parler de votre cas</a>
-    <a href="/services/" class="inline-block px-4 py-2 rounded-lg border border-slate-300 hover:border-primary-600">Voir les packs</a>
+    <a href="/services/" class="btn-ghost">Voir les packs</a>
   </div>
 </aside>

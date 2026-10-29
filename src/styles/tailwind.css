@@ -2,15 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Thème sombre : suit le réglage de l'appareil (prefers-color-scheme).
+   Fond noir pour que le logo (sur fond noir) se fonde dans l'en-tête. */
+@layer base {
+  :root { color-scheme: light dark; }
+  @media (prefers-color-scheme: dark) {
+    *, ::before, ::after { border-color: theme("colors.neutral.800"); }
+  }
+}
+
 /* utilitaires perso */
 .container-xl { @apply max-w-6xl mx-auto px-4; }
-.btn-primary { @apply inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium px-5 py-3 rounded-xl transition; }
-.card { @apply rounded-2xl shadow-md p-6 bg-white; }
+.card { @apply rounded-2xl shadow-md p-6 bg-white dark:bg-neutral-900 dark:shadow-none dark:ring-1 dark:ring-neutral-800; }
 
 /* Boutons */
-.btn-primary{@apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700}
-.btn-ghost{@apply border border-slate-200/20 text-slate-100 px-4 py-2 rounded-lg hover:bg-slate-800}
+.btn-primary { @apply inline-block bg-primary-700 hover:bg-primary-800 text-white font-medium px-4 py-2 rounded-lg transition; }
+.btn-ghost { @apply inline-block border border-slate-300 text-slate-800 px-4 py-2 rounded-lg transition hover:border-primary-600 hover:bg-slate-100 dark:border-neutral-700 dark:text-slate-100 dark:hover:border-primary-400 dark:hover:bg-neutral-800; }
 
+/* Champs de formulaire */
+.field { @apply w-full border border-slate-300 rounded-xl px-4 py-3 bg-white text-slate-800 placeholder:text-slate-400 dark:bg-neutral-900 dark:border-neutral-700 dark:text-slate-100 dark:placeholder:text-slate-500; }
 
 /* Alpine.js : masque les éléments x-cloak avant le chargement du script */
 [x-cloak] { display: none !important; }

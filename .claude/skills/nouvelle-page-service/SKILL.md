@@ -33,7 +33,7 @@ layout: layouts/base.njk
 
 <section class="py-10">
   <h1 class="text-4xl font-bold">Promesse en une phrase</h1>
-  <p class="mt-3 text-slate-600">Pour qui, et ce que ça change concrètement.</p>
+  <p class="mt-3 text-slate-600 dark:text-slate-400">Pour qui, et ce que ça change concrètement.</p>
   <div class="mt-6 flex flex-wrap gap-3">
     <a href="/contact/" class="btn-primary">Parler de votre cas</a>
   </div>
@@ -51,14 +51,15 @@ layout: layouts/base.njk
    ```html
    <div x-data="{ open: false }" class="card">
      <button @click="open = !open" class="w-full text-left font-semibold">Question ?</button>
-     <p x-show="open" class="mt-3 text-slate-700">Réponse.</p>
+     <p x-show="open" x-cloak class="mt-3 text-slate-700 dark:text-slate-300">Réponse.</p>
    </div>
    ```
 7. **CTA final** : `<section class="mt-12">` + phrase de réassurance (« Réponse sous 24–48 h ouvrées ») + `.btn-primary` vers `/contact/`.
 
 Règles :
 - Un seul `<h1>`, sections en `<h2 class="text-xl font-semibold">`.
-- Uniquement des classes existantes : `.btn-primary`, `.btn-ghost`, `.card`, utilitaires Tailwind. **Pas** de `.btn` ni de `prose` (sans effet).
+- Uniquement des classes existantes : `.btn-primary`, `.btn-ghost`, `.card`, `.field`, utilitaires Tailwind. **Pas** de `.btn`.
+- Chaque couleur de texte a sa variante sombre (`text-slate-600 dark:text-slate-400`…) : voir le tableau de la skill `charte-autoflowgp`, et vérifier la page en mode sombre.
 - Ne jamais inventer témoignages, logos clients ou chiffres de résultat.
 - Si un bloc sert sur plusieurs pages, le créer dans `src/_includes/components/<nom>.njk` et l'inclure.
 
