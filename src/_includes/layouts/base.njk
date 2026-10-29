@@ -8,6 +8,8 @@
   {# URL officielle : évite que Google indexe aussi les versions de test *.netlify.app #}
   <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
   {% if noindex %}<meta name="robots" content="noindex" />{% endif %}
+  {# Validation Google Search Console (propriété https://www.autoflowgp.com/) — ne pas supprimer #}
+  <meta name="google-site-verification" content="BBjvKVB3gQTOsTLPLL2l1PUMvHmmH4TGztjl3GWPwRw" />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
