@@ -7,7 +7,8 @@
     "dev:11ty": "eleventy --serve",
     "dev": "npm-run-all --parallel dev:*",
     "build:css": "tailwindcss -i src/styles/tailwind.css -o public/assets/main.css --minify",
-    "build": "npm run build:css && eleventy"
+    "build": "npm run build:css && eleventy",
+    "check": "node .claude/skills/verif-avant-deploy/scripts/check-site.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
