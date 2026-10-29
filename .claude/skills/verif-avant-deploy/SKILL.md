@@ -30,7 +30,7 @@ Le script sépare :
 | `lang manquant` / `aucun <h1>` | Le plus souvent : page sans `layout`. Ajouter `layout: layouts/base.njk`. |
 | `lien interne cassé` | Corriger le chemin (les pages sont servies en `/page/`) ou créer la page. |
 | `image sans alt` | Ajouter un `alt` descriptif (ou `alt=""` uniquement pour une image purement décorative — le script la signale quand même, à confirmer). |
-| `formulaire avec une URL provisoire` | Demander l'identifiant Formspree réel à l'utilisateur. Ne jamais l'inventer. |
+| `formulaire avec une URL provisoire` | Le site utilise **Netlify Forms** : `<form name="…" method="POST" action="/merci/" data-netlify="true" netlify-honeypot="site-web">` + `<input type="hidden" name="form-name" value="…">`. Aucun identifiant externe nécessaire. |
 | `Markdown brut` | Un bloc ```` ``` ```` ou un titre `####` a été collé par erreur dans un `.njk` : le supprimer. |
 | `classe … absente du CSS` | Classe Tailwind inexistante ou utilitaire perso non défini. Remplacer par une classe de la charte (skill `charte-autoflowgp`) ou la définir dans `src/styles/tailwind.css`. |
 

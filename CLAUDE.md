@@ -15,4 +15,7 @@ Eleventy 3 + Tailwind CSS 3 + Alpine.js, déployé par Netlify à chaque push su
 | `nouvelle-page-service` | Nouvelle page d'offre, secteur ou landing. |
 | `verif-avant-deploy` | Avant un push/merge sur `main`, ou après toute modification de contenu. |
 
-Ne jamais inventer témoignages, clients, chiffres de résultat ni identifiants (Formspree, etc.) : demander.
+Ne jamais inventer témoignages, clients, chiffres de résultat ni identifiants : demander.
+Ne jamais demander, utiliser ni écrire dans le dépôt un mot de passe ou une clé secrète.
+
+Formulaires : Netlify Forms (`data-netlify="true"`, champ caché `form-name`, honeypot `site-web`), redirection vers `/merci/`. Les messages arrivent dans Netlify → Forms.
