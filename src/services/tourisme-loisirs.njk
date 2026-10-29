@@ -1,0 +1,127 @@
+---
+title: "Automatisation tourisme et loisirs | AutoFlowGP"
+description: "Gîtes, chambres d’hôtes, activités : réservations directes avec acompte, messages d’accueil, créneaux et annulations météo automatisés."
+layout: layouts/base.njk
+---
+
+<section class="py-10">
+  <p class="text-sm font-medium text-primary-700 dark:text-primary-400">Gîtes, chambres d’hôtes, activités de loisirs</p>
+  <h1 class="mt-2 text-4xl font-bold">Plus de réservations en direct. Moins d’appels en pleine saison.</h1>
+  <p class="mt-3 max-w-2xl text-slate-600 dark:text-slate-400">
+    Réservations directes, acomptes, messages d’accueil, créneaux, annulations météo&nbsp;: nous automatisons ce qui vous prend
+    du temps, pour que la saison soit consacrée à vos clients.
+  </p>
+  <div class="mt-6 flex flex-wrap gap-3">
+    <a href="/contact/" class="btn-primary">Parler de votre activité</a>
+    <a href="#packs" class="btn-ghost">Voir les packs</a>
+  </div>
+</section>
+
+<section class="mt-4">
+  <h2 class="text-xl font-semibold">Ce qui vous coûte du temps et de l’argent</h2>
+  <div class="mt-4 grid md:grid-cols-3 gap-6">
+    <div class="card">
+      <h3 class="font-semibold">Les commissions et les demandes perdues</h3>
+      <p class="mt-2 text-slate-600 dark:text-slate-400">Les clients qui vous trouvent par vous-même doivent envoyer un email, attendre une réponse, faire un virement… et finissent par réserver ailleurs.</p>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold">Toujours les mêmes questions</h3>
+      <p class="mt-2 text-slate-600 dark:text-slate-400">Horaires, accès, stationnement, équipement&nbsp;: des dizaines d’appels par saison pour des informations qui ne changent pas.</p>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold">Les imprévus en pleine saison</h3>
+      <p class="mt-2 text-slate-600 dark:text-slate-400">Un orage, un créneau complet, une annulation&nbsp;: prévenir tout le monde au téléphone, dans l’urgence, au pire moment.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mt-12">
+  <h2 class="text-xl font-semibold">Ce que nous automatisons pour vous</h2>
+  <div class="mt-4 grid md:grid-cols-2 gap-6">
+    <div class="card">
+      <h3 class="font-semibold">Réservations directes</h3>
+      <ul class="mt-3 list-disc pl-6 text-slate-700 dark:text-slate-300 space-y-1">
+        <li>Formulaire de réservation sur votre site</li>
+        <li>Vérification des disponibilités</li>
+        <li>Acompte et solde en ligne avec Stripe</li>
+        <li>Calendrier bloqué dès le paiement</li>
+      </ul>
+      <a href="/blog/posts/2026-10-29-tourisme-reservations-directes/" class="mt-4 inline-block text-primary-700 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300">Lire&nbsp;: plus de réservations en direct →</a>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold">Messages d’accueil</h3>
+      <ul class="mt-3 list-disc pl-6 text-slate-700 dark:text-slate-300 space-y-1">
+        <li>Confirmation complète à la réservation</li>
+        <li>Infos pratiques quelques jours avant</li>
+        <li>Code d’accès ou rappel la veille</li>
+        <li>Merci et demande d’avis après le séjour</li>
+      </ul>
+      <a href="/blog/posts/2026-10-29-tourisme-messages-accueil-automatiques/" class="mt-4 inline-block text-primary-700 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300">Lire&nbsp;: les messages d’accueil automatiques →</a>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold">Créneaux et annulations météo</h3>
+      <ul class="mt-3 list-disc pl-6 text-slate-700 dark:text-slate-300 space-y-1">
+        <li>Places restantes à jour par créneau</li>
+        <li>Liste d’attente prévenue automatiquement</li>
+        <li>Alerte météo pour décider à temps</li>
+        <li>Report ou remboursement en un clic</li>
+      </ul>
+      <a href="/blog/posts/2026-10-29-loisirs-creneaux-annulations-meteo/" class="mt-4 inline-block text-primary-700 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300">Lire&nbsp;: créneaux et annulations météo →</a>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold">Pilotage de la saison</h3>
+      <ul class="mt-3 list-disc pl-6 text-slate-700 dark:text-slate-300 space-y-1">
+        <li>Fichier clients dans Notion</li>
+        <li>Récapitulatif des arrivées ou des créneaux du lendemain</li>
+        <li>Relance des clients pour la saison suivante</li>
+        <li>Alertes si un scénario s’arrête</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="mt-12">
+  <h2 class="text-xl font-semibold">Méthode</h2>
+  <ol class="mt-4 grid md:grid-cols-4 gap-4 text-slate-600 dark:text-slate-400">
+    <li class="card"><strong class="text-slate-800 dark:text-slate-100">1. Audit</strong><br>Comment arrivent vos réservations aujourd’hui, par quels canaux.</li>
+    <li class="card"><strong class="text-slate-800 dark:text-slate-100">2. Mise en place</strong><br>Scénarios Make ou Zapier, Notion, Stripe.</li>
+    <li class="card"><strong class="text-slate-800 dark:text-slate-100">3. Tests</strong><br>Avant la saison, sur de vraies réservations.</li>
+    <li class="card"><strong class="text-slate-800 dark:text-slate-100">4. Suivi</strong><br>Support, ajustements et maintenance.</li>
+  </ol>
+</section>
+
+<section id="packs" class="mt-12 scroll-mt-20">
+  <h2 class="text-xl font-semibold">Packs</h2>
+  <p class="mt-2 text-slate-600 dark:text-slate-400">Les messages d’accueil tiennent dans un Starter&nbsp;; la réservation directe avec acompte ou la gestion des créneaux et annulations météo, dans un Pro.</p>
+  <div class="mt-4">
+    {% include "components/pricing.njk" %}
+  </div>
+</section>
+
+<section class="mt-12">
+  <h2 class="text-xl font-semibold">Questions fréquentes</h2>
+  <div class="mt-4 space-y-3">
+    <div x-data="{ open: false }" class="card">
+      <button type="button" @click="open = !open" :aria-expanded="open.toString()" class="w-full text-left font-semibold">Je suis déjà sur des plateformes de réservation. Est-ce compatible&nbsp;?</button>
+      <p x-show="open" x-cloak class="mt-3 text-slate-700 dark:text-slate-300">Oui. Les plateformes restent une source de clients&nbsp;; nous synchronisons les calendriers et automatisons vos réservations directes à côté. Pour les clients des plateformes, nous utilisons leurs propres outils de messagerie, dans le respect de leurs règles.</p>
+    </div>
+    <div x-data="{ open: false }" class="card">
+      <button type="button" @click="open = !open" :aria-expanded="open.toString()" class="w-full text-left font-semibold">Quand faut-il s’y prendre&nbsp;?</button>
+      <p x-show="open" x-cloak class="mt-3 text-slate-700 dark:text-slate-300">Avant la saison. Mettre en place et tester les automatismes prend quelques semaines&nbsp;: c’est l’hiver et le printemps qu’il faut le faire, pas au mois de juillet.</p>
+    </div>
+    <div x-data="{ open: false }" class="card">
+      <button type="button" @click="open = !open" :aria-expanded="open.toString()" class="w-full text-left font-semibold">L’annulation météo est-elle décidée automatiquement&nbsp;?</button>
+      <p x-show="open" x-cloak class="mt-3 text-slate-700 dark:text-slate-300">Non. La décision de sécurité reste la vôtre. L’automatisation vous alerte en cas de mauvaise prévision, puis prévient tous les participants et gère reports et remboursements dès que vous avez décidé.</p>
+    </div>
+    <div x-data="{ open: false }" class="card">
+      <button type="button" @click="open = !open" :aria-expanded="open.toString()" class="w-full text-left font-semibold">Faut-il être à l’aise avec l’informatique&nbsp;?</button>
+      <p x-show="open" x-cloak class="mt-3 text-slate-700 dark:text-slate-300">Non. Nous installons, testons et documentons. Au quotidien, vous consultez un tableau et cochez une case pour annuler un créneau&nbsp;; le reste tourne seul.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mt-12 card">
+  <h2 class="text-xl font-semibold">Parlons de votre activité</h2>
+  <p class="mt-2 text-slate-600 dark:text-slate-400">Dites-nous comment arrivent vos réservations aujourd’hui. Réponse sous 24–48 h ouvrées.</p>
+  <a href="/contact/" class="btn-primary mt-4">Parler de votre activité</a>
+</section>
