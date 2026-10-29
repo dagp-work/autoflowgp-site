@@ -25,7 +25,7 @@ Le fichier **commence directement** par le front-matter :
 
 ```md
 ---
-layout: layouts/base.njk
+layout: layouts/post.njk
 title: "Titre ≤ 60 caractères avec la requête visée"
 description: "Bénéfice concret pour le lecteur, 120–160 caractères."
 ---
@@ -41,6 +41,7 @@ Règles :
 - Un seul `# Titre` (h1) ; les sections en `##`, sous-sections en `###`.
 - Pas de bloc ```` ``` ```` autour de l'article, pas de `####` avec le nom de fichier (c'est l'erreur qui casse `2025-09-19-hello-world.md`).
 - La date vient du nom de fichier ; n'ajouter `date:` que pour forcer une autre date.
+- `layouts/post.njk` met en forme le texte (typographie), affiche la date et ajoute automatiquement un encart d'appel à l'action en bas : ne pas le dupliquer, terminer plutôt par une phrase de transition vers `/contact/`.
 
 ## 3. Structure qui convertit
 

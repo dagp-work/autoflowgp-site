@@ -6,8 +6,9 @@ module.exports = function (eleventyConfig) {
   module.exports = { dir:{ input:"src", includes:"_includes", data:"_data", output:"_site" } };
 
   // Filtre date pour Nunjucks: {{ post.date | date("dd/MM/yyyy") }}
+  // {{ "now" | date("yyyy") }} -> année courante
   eleventyConfig.addFilter("date", (d, fmt = "dd/MM/yyyy") =>
-    DateTime.fromJSDate(d).setZone("Europe/Paris").toFormat(fmt)
+    (d === "now" ? DateTime.now() : DateTime.fromJSDate(d)).setZone("Europe/Paris").toFormat(fmt)
   );
 
   // Collection articles

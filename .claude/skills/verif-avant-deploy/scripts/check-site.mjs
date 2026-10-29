@@ -3,7 +3,7 @@
 // Usage : node .claude/skills/verif-avant-deploy/scripts/check-site.mjs [--no-build]
 // Code de sortie 1 s'il y a au moins une ERREUR (les AVERTISSEMENTS ne bloquent pas).
 import { execSync } from "node:child_process";
-import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, rmSync, statSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 
 const root = resolve(new URL("../../../../", import.meta.url).pathname);
@@ -16,6 +16,8 @@ const warn = (file, msg) => warnings.push(`${file} : ${msg}`);
 // 1. Build de production
 if (!process.argv.includes("--no-build")) {
   try {
+    // Eleventy ne supprime pas les anciennes pages : on repart d'un _site/ vide.
+    rmSync(site, { recursive: true, force: true });
     execSync("npm run build", { cwd: root, stdio: "pipe" });
   } catch (e) {
     console.error("ERREUR : le build a échoué.\n" + (e.stdout || "") + (e.stderr || ""));
@@ -93,12 +95,16 @@ for (const file of walk(site).filter((f) => f.endsWith(".html"))) {
   for (const [, action] of html.matchAll(/<form[^>]*action="([^"]*)"/gi)) {
     if (/x{4,}|example|TODO/i.test(action)) err(rel, `formulaire avec une URL provisoire : ${action}`);
   }
+  for (const bad of ["Invalid DateTime", "undefined", "NaN"]) {
+    if (new RegExp(`\\b${bad}\\b`).test(text(html))) err(rel, `« ${bad} » affiché dans la page (variable ou filtre en erreur)`);
+  }
   if (/^\s*```|^#{1,6} .*\.md\s*$/m.test(text(html))) warn(rel, "du Markdown brut (``` ou ####) apparaît dans la page");
 
   if (css) {
     for (const [, cls] of html.matchAll(/\bclass="([^"]*)"/gi)) {
       for (const c of cls.split(/\s+/).filter(Boolean)) {
-        if (/^\d|[{}]|^language-/.test(c)) continue;
+        // not-prose : marqueur lu par le plugin typography via [class~="not-prose"], pas une classe CSS.
+        if (/^\d|[{}]|^language-|^not-prose$/.test(c)) continue;
         const selector = new RegExp("\\." + cssEscape(c).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(?![a-zA-Z0-9_\\\\-])");
         if (!selector.test(css)) {
           if (!unknownClasses.has(c)) unknownClasses.set(c, new Set());
