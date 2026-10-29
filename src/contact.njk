@@ -1,13 +1,15 @@
 ---
-title: ...
+title: "Contact"
+description: "Décrivez votre besoin d’automatisation à AutoFlowGP. Réponse sous 24–48 h ouvrées."
 layout: "layout.njk"
 ---
 <h1 class="text-3xl font-bold">Contact</h1>
 <p class="mt-3 text-slate-700">Décrivez votre besoin. Réponse sous 24–48 h ouvrées.</p>
-<form action="https://formspree.io/f/xxxxxx" method="POST" class="mt-6 max-w-xl space-y-4">
+<form name="contact" method="POST" action="/merci/" data-netlify="true" netlify-honeypot="site-web" class="mt-6 max-w-xl space-y-4">
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="hidden"><label>Ne pas remplir : <input name="site-web" /></label></p>
   <input type="text" name="name" placeholder="Nom" required class="w-full border rounded-xl px-4 py-3" />
   <input type="email" name="email" placeholder="Email" required class="w-full border rounded-xl px-4 py-3" />
   <textarea name="message" placeholder="Votre message" rows="6" required class="w-full border rounded-xl px-4 py-3"></textarea>
   <button type="submit" class="btn-primary">Envoyer</button>
 </form>
-```

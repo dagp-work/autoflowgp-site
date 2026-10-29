@@ -11,3 +11,6 @@
 .btn-primary{@apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700}
 .btn-ghost{@apply border border-slate-200/20 text-slate-100 px-4 py-2 rounded-lg hover:bg-slate-800}
 
+
+/* Alpine.js : masque les éléments x-cloak avant le chargement du script */
+[x-cloak] { display: none !important; }
