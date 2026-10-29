@@ -61,6 +61,6 @@ Prenons un loueur de paddles en bord de lac, avec des créneaux de 2 heures et 1
 
 Les créneaux et les annulations s’appuient sur [un bon système de réservation directe](/blog/posts/2026-10-29-tourisme-reservations-directes/), complété par [des messages d’accueil automatiques](/blog/posts/2026-10-29-tourisme-messages-accueil-automatiques/) : tenue à prévoir, point de rendez-vous, demande d’avis.
 
-Toutes nos solutions sont sur la page [Automatisation pour le tourisme et les loisirs](/services/tourisme-loisirs/). La gestion des créneaux avec annulation météo et remboursement Stripe correspond à notre pack Pro, présenté sur la page [nos packs](/services/).
+Toutes mes solutions sont sur la page [Automatisation pour le tourisme et les loisirs](/services/tourisme-loisirs/). La gestion des créneaux avec annulation météo et remboursement Stripe correspond à mon pack Pro, présenté sur la page [mes packs](/services/).
 
 La prochaine saison approche ? [Parlons de votre activité](/contact/) : préparez vos automatismes maintenant, pour ne plus passer vos journées d’orage au téléphone.

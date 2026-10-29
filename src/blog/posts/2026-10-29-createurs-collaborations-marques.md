@@ -39,7 +39,7 @@ Une fois la collaboration signée, les dates clés sont ajoutées à votre calen
 
 ### 5. La facture et le paiement suivis jusqu’au bout
 
-Le contenu publié, la facture part, et son paiement est suivi automatiquement. C’est le sujet de notre article sur [la facturation et les relances de paiement](/blog/posts/2026-10-29-createurs-factures-relances-paiement/).
+Le contenu publié, la facture part, et son paiement est suivi automatiquement. C’est le sujet de mon article sur [la facturation et les relances de paiement](/blog/posts/2026-10-29-createurs-factures-relances-paiement/).
 
 ## Qualifier les demandes automatiquement
 
@@ -73,6 +73,6 @@ Prenons une créatrice culinaire qui reçoit plusieurs demandes de marques par m
 
 Le partenariat signé, il reste à être payé à temps : voir [facturation et relances de paiement automatiques](/blog/posts/2026-10-29-createurs-factures-relances-paiement/). Et pour publier régulièrement sans y passer vos soirées : [le planning éditorial automatisé](/blog/posts/2026-10-29-createurs-planning-publications/).
 
-Toutes nos solutions pour les créateurs sont sur la page [Automatisation pour créateurs de contenu](/services/createurs-contenu/). Le circuit complet (formulaire, Notion, kit média, échéances) correspond à notre pack Pro, présenté sur la page [nos packs](/services/).
+Toutes mes solutions pour les créateurs sont sur la page [Automatisation pour créateurs de contenu](/services/createurs-contenu/). Le circuit complet (formulaire, Notion, kit média, échéances) correspond à mon pack Pro, présenté sur la page [mes packs](/services/).
 
-Vos collaborations se perdent entre Instagram, TikTok et vos emails ? [Parlons de votre activité](/contact/) : nous construisons votre circuit de partenariats.
+Vos collaborations se perdent entre Instagram, TikTok et vos emails ? [Parlons de votre activité](/contact/) : je construis votre circuit de partenariats.

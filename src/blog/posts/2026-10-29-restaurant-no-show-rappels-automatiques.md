@@ -81,12 +81,12 @@ Résultat : plus aucun rappel à faire à la main, et une vision claire du serv
 
 ## Combien de temps pour le mettre en place ?
 
-Pour un restaurant avec une source de réservations claire, ce type de workflow tient dans un projet court : audit de votre façon de prendre les réservations, mise en place des scénarios, tests, puis suivi. C’est exactement le périmètre de notre pack Starter, présenté sur la page [nos packs](/services/).
+Pour un restaurant avec une source de réservations claire, ce type de workflow tient dans un projet court : audit de votre façon de prendre les réservations, mise en place des scénarios, tests, puis suivi. C’est exactement le périmètre de mon pack Starter, présenté sur la page [mes packs](/services/).
 
 ## Pour aller plus loin
 
 Les rappels de réservation sont la première brique. Une fois la liste de clients centralisée, vous pouvez aussi [demander automatiquement un avis Google après le repas](/blog/posts/2026-10-29-restaurant-avis-google-automatiques/) ou [gérer les demandes de groupes et de privatisation](/blog/posts/2026-10-29-restaurant-groupes-privatisation-automatiser/) sans y passer vos soirées.
 
-Toutes nos solutions pour les restaurateurs sont réunies sur la page [Automatisation pour restaurants](/services/restaurants/).
+Toutes mes solutions pour les restaurateurs sont réunies sur la page [Automatisation pour restaurants](/services/restaurants/).
 
-Vous voulez ce workflow sans y passer vos soirées ? [Parlons de votre cas](/contact/) : nous regardons comment vous prenez vos réservations aujourd’hui et ce qui peut être automatisé.
+Vous voulez ce workflow sans y passer vos soirées ? [Parlons de votre cas](/contact/) : je regarde comment vous prenez vos réservations aujourd’hui et ce qui peut être automatisé.

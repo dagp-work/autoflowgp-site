@@ -82,6 +82,6 @@ Prenons un institut de beauté avec trois praticiennes.
 
 Votre fichier clients est la base de deux automatisations qui rapportent vite : [éviter les rendez-vous non honorés](/blog/posts/2026-10-29-salon-rendez-vous-non-honores/) et [faire revenir vos clients au bon moment](/blog/posts/2026-10-29-salon-fideliser-clients-relances/).
 
-La fiche client numérique avec historique automatique correspond à notre pack Pro (mini-CRM Notion), présenté sur la page [nos packs](/services/). Toutes nos solutions pour les salons sont sur la page [Automatisation pour salons de coiffure, instituts et bien-être](/services/salons-beaute-bien-etre/).
+La fiche client numérique avec historique automatique correspond à mon pack Pro (mini-CRM Notion), présenté sur la page [mes packs](/services/). Toutes mes solutions pour les salons sont sur la page [Automatisation pour salons de coiffure, instituts et bien-être](/services/salons-beaute-bien-etre/).
 
-Votre fichier clients tient encore dans un cahier ? [Parlons de votre salon](/contact/) : nous construisons une fiche simple, que votre équipe aura envie d’utiliser.
+Votre fichier clients tient encore dans un cahier ? [Parlons de votre salon](/contact/) : je construis une fiche simple, que votre équipe aura envie d’utiliser.

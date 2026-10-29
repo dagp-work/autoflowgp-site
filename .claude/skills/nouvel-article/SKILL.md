@@ -50,7 +50,8 @@ Règles :
 3. **Exemple** réaliste dans un des secteurs cibles.
 4. **Pièges / limites** — montre l'expertise.
 5. **Appel à l'action** final, par exemple :
-   `Vous voulez ce workflow sans y passer vos soirées ? [Parlons de votre cas](/contact/) ou découvrez [nos packs](/services/).`
+   `Vous voulez ce workflow sans y passer vos soirées ? [Parlons de votre cas](/contact/) ou découvrez [mes packs](/services/).`
+   Le texte est écrit au « je » (Axel), voir la skill `charte-autoflowgp`.
 
 Longueur visée : 700–1 200 mots. Au moins **un lien vers `/services/`** et **un vers `/contact/`**. Liens internes en chemin absolu (`/services/`).
 Ne jamais inventer de client, de témoignage, de chiffre ou de résultat : utiliser un exemple présenté comme tel (« Prenons un restaurant qui… ») ou demander les vrais chiffres.

@@ -1,7 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "Bienvenue sur le blog AutoFlowGP"
-description: "Premier article du blog AutoFlowGP : notre approche de l’automatisation, des cas d’usage concrets et notre feuille de route."
+description: "Premier article du blog AutoFlowGP : mon approche de l’automatisation, des cas d’usage concrets et ma feuille de route."
 ---
 
 # Bienvenue sur le blog AutoFlowGP

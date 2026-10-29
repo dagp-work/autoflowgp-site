@@ -74,6 +74,6 @@ Aucune action manuelle, et une demande envoyée à chaque client, pas seulement 
 
 Une fois vos contacts clients organisés, d’autres tâches s’automatisent avec la même base : [les rappels de réservation contre les no-shows](/blog/posts/2026-10-29-restaurant-no-show-rappels-automatiques/) et [le traitement des demandes de groupes et de privatisation](/blog/posts/2026-10-29-restaurant-groupes-privatisation-automatiser/).
 
-Retrouvez toutes nos solutions pour les restaurateurs sur la page [Automatisation pour restaurants](/services/restaurants/), et nos formules sur la page [nos packs](/services/).
+Retrouvez toutes mes solutions pour les restaurateurs sur la page [Automatisation pour restaurants](/services/restaurants/), et mes formules sur la page [mes packs](/services/).
 
-Vous voulez plus d’avis sans y penser à chaque service ? [Parlons de votre cas](/contact/) : nous mettons en place la demande d’avis automatique, dans les règles.
+Vous voulez plus d’avis sans y penser à chaque service ? [Parlons de votre cas](/contact/) : je mets en place la demande d’avis automatique, dans les règles.

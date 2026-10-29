@@ -71,6 +71,6 @@ Prenons un photographe qui fait des shootings pour des marques et des particulie
 
 Ce circuit s’applique aussi à vos partenariats : voir [gérer les collaborations avec les marques](/blog/posts/2026-10-29-createurs-collaborations-marques/). Pour le reste de votre temps : [automatiser son planning de publications](/blog/posts/2026-10-29-createurs-planning-publications/).
 
-Toutes nos solutions pour les créateurs sont sur la page [Automatisation pour créateurs de contenu](/services/createurs-contenu/), et nos formules sur la page [nos packs](/services/).
+Toutes mes solutions pour les créateurs sont sur la page [Automatisation pour créateurs de contenu](/services/createurs-contenu/), et mes formules sur la page [mes packs](/services/).
 
-Vous passez trop de temps à courir après vos paiements ? [Parlons de votre activité](/contact/) : nous mettons en place votre circuit de facturation, de l’acompte à la relance.
+Vous passez trop de temps à courir après vos paiements ? [Parlons de votre activité](/contact/) : je mets en place votre circuit de facturation, de l’acompte à la relance.

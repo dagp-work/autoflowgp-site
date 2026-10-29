@@ -87,6 +87,6 @@ Prenons un barbier qui note ses clients et leurs prestations dans une base Notio
 
 La relance repose sur un bon fichier clients. Découvrez comment [tenir une fiche client numérique](/blog/posts/2026-10-29-salon-fiche-client-numerique/), et comment [éviter les rendez-vous non honorés](/blog/posts/2026-10-29-salon-rendez-vous-non-honores/).
 
-Toutes nos solutions pour les salons sont sur la page [Automatisation pour salons de coiffure, instituts et bien-être](/services/salons-beaute-bien-etre/), et nos formules sur la page [nos packs](/services/).
+Toutes mes solutions pour les salons sont sur la page [Automatisation pour salons de coiffure, instituts et bien-être](/services/salons-beaute-bien-etre/), et mes formules sur la page [mes packs](/services/).
 
 Vous voulez que vos clients reviennent sans avoir à y penser ? [Parlons de votre salon](/contact/) : nous définissons ensemble les bons rythmes de relance pour vos prestations.
