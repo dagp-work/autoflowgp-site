@@ -3,6 +3,8 @@ const { DateTime } = require("luxon");
 module.exports = function (eleventyConfig) {
   // Copier /public -> /_site
   eleventyConfig.addPassthroughCopy({ "public": "/" })
+  // Alpine.js servi par le site (version fixée par package-lock, pas de CDN)
+  eleventyConfig.addPassthroughCopy({ "node_modules/alpinejs/dist/cdn.min.js": "assets/js/alpine.min.js" })
   module.exports = { dir:{ input:"src", includes:"_includes", data:"_data", output:"_site" } };
 
   // Filtre date pour Nunjucks: {{ post.date | date("dd/MM/yyyy") }}
