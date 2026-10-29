@@ -5,6 +5,7 @@ Eleventy 3 + Tailwind CSS 3 + Alpine.js, déployé par Netlify à chaque push su
 - `npm run dev` : serveur local · `npm run build` : build dans `_site/` · `npm run check` : build + contrôle qualité (obligatoire avant tout push sur `main`).
 - Pages : `src/*.njk` · articles : `src/blog/posts/AAAA-MM-JJ-slug.md` · composants : `src/_includes/components/` · menu et infos du site : `src/_data/site.json`.
 - Layout de référence : `layouts/base.njk`.
+- SEO : `sitemap.xml` et `robots.txt` générés automatiquement (`src/sitemap.njk`, `src/robots.njk`), URL canonique posée par le layout. Une page à exclure de Google : `noindex: true` dans son front-matter.
 
 ## Skills du dépôt (`.claude/skills/`)
 
