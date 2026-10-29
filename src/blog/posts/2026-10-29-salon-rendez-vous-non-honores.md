@@ -70,7 +70,7 @@ Prenons un salon de coiffure à deux postes qui prend ses rendez-vous par télé
 
 **Oublier les rendez-vous pris par téléphone.** Si une partie des rendez-vous n’entre jamais dans l’agenda partagé, ces clients-là n’auront pas de rappel. La règle : tout rendez-vous passe par le même agenda.
 
-**Négliger le consentement.** Le numéro donné pour un rendez-vous sert à ce rendez-vous. Pour envoyer ensuite des offres, il faut respecter les règles de prospection (voir notre article sur [la fidélisation automatique](/blog/posts/2026-10-29-salon-fideliser-clients-relances/)).
+**Négliger le consentement.** Le numéro donné pour un rendez-vous sert à ce rendez-vous. Pour envoyer ensuite des offres, il faut respecter les règles de prospection (voir mon article sur [la fidélisation automatique](/blog/posts/2026-10-29-salon-fideliser-clients-relances/)).
 
 **Ne rien surveiller.** Un scénario peut s’arrêter. Une alerte en cas d’erreur vous évite de découvrir trois semaines plus tard que plus aucun rappel ne partait.
 
@@ -78,6 +78,6 @@ Prenons un salon de coiffure à deux postes qui prend ses rendez-vous par télé
 
 Une fois les rendez-vous maîtrisés, deux leviers rapportent vite : [faire revenir vos clients au bon moment](/blog/posts/2026-10-29-salon-fideliser-clients-relances/) et [tenir une fiche client numérique](/blog/posts/2026-10-29-salon-fiche-client-numerique/) (prestations, formules, préférences).
 
-Toutes nos solutions pour les salons et instituts sont réunies sur la page [Automatisation pour salons de coiffure, instituts et bien-être](/services/salons-beaute-bien-etre/). Les rappels et la liste d’attente tiennent dans notre pack Starter, présenté sur la page [nos packs](/services/).
+Toutes mes solutions pour les salons et instituts sont réunies sur la page [Automatisation pour salons de coiffure, instituts et bien-être](/services/salons-beaute-bien-etre/). Les rappels et la liste d’attente tiennent dans mon pack Starter, présenté sur la page [mes packs](/services/).
 
-Vous perdez des créneaux chaque semaine ? [Parlons de votre salon](/contact/) : nous regardons comment vous prenez vos rendez-vous aujourd’hui et ce qui peut tourner tout seul.
+Vous perdez des créneaux chaque semaine ? [Parlons de votre salon](/contact/) : je regarde comment vous prenez vos rendez-vous aujourd’hui et ce qui peut tourner tout seul.

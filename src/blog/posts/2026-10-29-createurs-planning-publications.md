@@ -65,6 +65,6 @@ Prenons un créateur de contenu sport qui publie sur trois plateformes.
 
 Votre planning se relie à [vos collaborations avec les marques](/blog/posts/2026-10-29-createurs-collaborations-marques/) et à [votre facturation](/blog/posts/2026-10-29-createurs-factures-relances-paiement/), pour une vision complète de votre activité.
 
-Toutes nos solutions pour les créateurs sont sur la page [Automatisation pour créateurs de contenu](/services/createurs-contenu/). Un planning Notion avec quelques automatisations clés tient dans notre pack Starter, présenté sur la page [nos packs](/services/).
+Toutes mes solutions pour les créateurs sont sur la page [Automatisation pour créateurs de contenu](/services/createurs-contenu/). Un planning Notion avec quelques automatisations clés tient dans mon pack Starter, présenté sur la page [mes packs](/services/).
 
-Vous voulez publier régulièrement sans y laisser vos soirées ? [Parlons de votre activité](/contact/) : nous organisons votre planning et automatisons ce qui peut l’être.
+Vous voulez publier régulièrement sans y laisser vos soirées ? [Parlons de votre activité](/contact/) : j’organise votre planning et j’automatise ce qui peut l’être.

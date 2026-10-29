@@ -44,7 +44,7 @@ layout: layouts/base.njk
 
 1. **Hero** (ci-dessus) : promesse, sous-titre, CTA.
 2. **Le problème** : 3 douleurs concrètes de la cible (`grid md:grid-cols-3 gap-6` de `.card`).
-3. **Ce que nous automatisons pour vous** : liste de tâches + outils (Make, Zapier, Stripe, Notion, Webflow).
+3. **Ce que j’automatise pour vous** : liste de tâches + outils (Make, Zapier, Stripe, Notion, Webflow).
 4. **Méthode** : Audit → Mise en place → Tests → Suivi (reprendre la formulation de l'accueil).
 5. **Packs** : `{% include "components/pricing.njk" %}` — ne jamais recopier les prix en dur.
 6. **Questions fréquentes** (optionnel) : 3–5 questions, accordéon Alpine.js possible :

@@ -38,7 +38,7 @@ Quelques mois plus tard, un message pour la saison suivante peut aussi partir, s
 
 ## Comment ça marche
 
-1. Les réservations arrivent dans un calendrier ou une base **Notion** (voir notre article sur [les réservations en direct](/blog/posts/2026-10-29-tourisme-reservations-directes/)).
+1. Les réservations arrivent dans un calendrier ou une base **Notion** (voir mon article sur [les réservations en direct](/blog/posts/2026-10-29-tourisme-reservations-directes/)).
 2. Un scénario **Make** calcule les dates d’envoi de chaque message à partir de la date d’arrivée.
 3. Les messages partent par email ou SMS, personnalisés avec le prénom, les dates et le logement ou l’activité réservés.
 4. Si la réservation est annulée ou modifiée, les messages sont annulés ou décalés automatiquement.
@@ -72,6 +72,6 @@ Prenons un centre de canoë-kayak qui propose des descentes de rivière.
 
 Ces messages s’appuient sur un bon système de réservation : voir [prendre plus de réservations en direct](/blog/posts/2026-10-29-tourisme-reservations-directes/). Pour les activités en extérieur, lisez aussi [la gestion des créneaux et des annulations météo](/blog/posts/2026-10-29-loisirs-creneaux-annulations-meteo/).
 
-Toutes nos solutions sont sur la page [Automatisation pour le tourisme et les loisirs](/services/tourisme-loisirs/), et nos formules sur la page [nos packs](/services/).
+Toutes mes solutions sont sur la page [Automatisation pour le tourisme et les loisirs](/services/tourisme-loisirs/), et mes formules sur la page [mes packs](/services/).
 
-Vous répondez toujours aux mêmes questions pendant la saison ? [Parlons de votre activité](/contact/) : nous écrivons avec vous les messages et les programmons une bonne fois pour toutes.
+Vous répondez toujours aux mêmes questions pendant la saison ? [Parlons de votre activité](/contact/) : j’écris avec vous les messages et je les programme une bonne fois pour toutes.

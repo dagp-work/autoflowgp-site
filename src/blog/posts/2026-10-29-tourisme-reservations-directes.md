@@ -70,6 +70,6 @@ Le propriétaire ne fait plus qu’une chose : accueillir.
 
 Une fois la réservation en direct en place, deux automatisations font la différence : [les messages d’accueil avant et après le séjour](/blog/posts/2026-10-29-tourisme-messages-accueil-automatiques/), et, pour les activités, [la gestion des créneaux et des annulations météo](/blog/posts/2026-10-29-loisirs-creneaux-annulations-meteo/).
 
-Toutes nos solutions pour le tourisme sont sur la page [Automatisation pour le tourisme et les loisirs](/services/tourisme-loisirs/). Le parcours complet (formulaire, disponibilités, acompte Stripe, confirmation) correspond à notre pack Pro, présenté sur la page [nos packs](/services/).
+Toutes mes solutions pour le tourisme sont sur la page [Automatisation pour le tourisme et les loisirs](/services/tourisme-loisirs/). Le parcours complet (formulaire, disponibilités, acompte Stripe, confirmation) correspond à mon pack Pro, présenté sur la page [mes packs](/services/).
 
 La saison approche et vous voulez des réservations directes plus simples ? [Parlons de votre activité](/contact/) : le meilleur moment pour mettre en place ces automatismes, c’est avant le rush.

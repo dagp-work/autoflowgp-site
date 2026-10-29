@@ -74,6 +74,6 @@ Le gérant n’a passé que quelques minutes sur la demande, et le client a eu u
 
 Le formulaire et la base Notion servent aussi à vos réservations classiques. Découvrez comment [réduire les no-shows avec des rappels automatiques](/blog/posts/2026-10-29-restaurant-no-show-rappels-automatiques/) et comment [obtenir plus d’avis Google sans y penser](/blog/posts/2026-10-29-restaurant-avis-google-automatiques/).
 
-Ce workflow (formulaire, Notion, devis, relances et acompte Stripe) correspond à notre pack Pro, détaillé sur la page [nos packs](/services/). Toutes nos solutions pour les restaurateurs sont sur la page [Automatisation pour restaurants](/services/restaurants/).
+Ce workflow (formulaire, Notion, devis, relances et acompte Stripe) correspond à mon pack Pro, détaillé sur la page [mes packs](/services/). Toutes mes solutions pour les restaurateurs sont sur la page [Automatisation pour restaurants](/services/restaurants/).
 
-Vous recevez des demandes de groupes et vous voulez y répondre plus vite ? [Parlons de votre cas](/contact/) : nous partons de vos menus et de vos conditions pour construire votre parcours.
+Vous recevez des demandes de groupes et vous voulez y répondre plus vite ? [Parlons de votre cas](/contact/) : je pars de vos menus et de vos conditions pour construire votre parcours.
