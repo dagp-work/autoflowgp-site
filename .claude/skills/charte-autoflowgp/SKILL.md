@@ -18,7 +18,9 @@ Source de vérité technique : `tailwind.config.js` et `src/styles/tailwind.css`
 
 ## Ton de voix
 
-- **Vouvoiement** du lecteur, « nous » pour AutoFlowGP.
+- **Vouvoiement** du lecteur, **« je »** pour AutoFlowGP : l'activité est menée par une seule personne, Axel (Île-de-France). Ne jamais écrire « nous », « notre équipe » ni laisser entendre une équipe. Le parcours d'Axel (informatique web et réseaux + vendeur, conseiller, formateur, moniteur) est présenté sur `/about/`.
+- Ne pas genrer Axel : éviter « fondateur/fondatrice », « seul/seule », « basé/basée », « passionné/passionnée » ; préférer « créé par Axel », « je travaille en direct », « AutoFlowGP est basé en Île-de-France ».
+- À ce jour, seule `/about/` est au « je » ; les autres pages et articles utilisent encore « nous » (harmonisation à faire).
 - Phrases **courtes**, verbe d'action en tête, bénéfice avant la technique (« Moins d'opérations manuelles. Plus d'exécution. »).
 - Concret : nommer la tâche automatisée (relance, devis, facture, rendez-vous) et l'outil.
 - Pas de jargon non expliqué, pas de superlatifs creux (« révolutionnaire », « ultime »), pas de promesse chiffrée non prouvée.
