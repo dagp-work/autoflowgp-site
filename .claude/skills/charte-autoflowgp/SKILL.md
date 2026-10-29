@@ -23,6 +23,7 @@ Source de vérité technique : `tailwind.config.js` et `src/styles/tailwind.css`
 - Concret : nommer la tâche automatisée (relance, devis, facture, rendez-vous) et l'outil.
 - Pas de jargon non expliqué, pas de superlatifs creux (« révolutionnaire », « ultime »), pas de promesse chiffrée non prouvée.
 - Typographie française : espace insécable avant `? ! : ;` (`&nbsp;` dans le HTML), apostrophe typographique `’`, guillemets « ».
+- Prix : symbole après le montant, fourchette avec tiret demi-cadratin, espaces insécables (`150–250 €`, `1 200 €`), jamais `€150 - 250`.
 - Chaque page se termine par un **appel à l'action** vers `/contact/` (« Parler de votre cas », « Demander un devis », « Démarrer un cadrage »).
 
 ## Couleurs
