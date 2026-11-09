@@ -1,0 +1,26 @@
+{
+  "name": "autoflowgp-motion",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Motion design AutoFlowGP : signature animée 3D (Remotion + Three.js)",
+  "scripts": {
+    "studio": "remotion studio src/index.jsx",
+    "audio": "node scripts/render-audio.mjs",
+    "render:169": "remotion render src/index.jsx Signature-Nacre-16x9 out/autoflowgp-signature-nacre-16x9.mp4",
+    "render:916": "remotion render src/index.jsx Signature-Nacre-9x16 out/autoflowgp-signature-nacre-9x16.mp4",
+    "render": "npm run audio && npm run render:169 && npm run render:916"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "5.2.7",
+    "@fontsource/onest": "5.2.11",
+    "@remotion/cli": "4.0.538",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.538",
+    "three": "0.128.0"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}
