@@ -3,11 +3,11 @@ import { AbsoluteFill, Audio, continueRender, delayRender, staticFile, useCurren
 import '@fontsource/onest/800.css';
 import '@fontsource/ibm-plex-mono/400.css';
 import { createEngine, NACRE } from './scene/engine.js';
-import { sm } from './scene/timeline.js';
+import { sm, FULL } from './scene/timeline.js';
 
 const rgb = (a) => `rgb(${a.map((v) => Math.round(v * 255)).join(',')})`;
 
-export const Signature = () => {
+export const Signature = ({ duration = FULL.duration, start = FULL.start, speed = FULL.speed, fadeIn = FULL.fadeIn, audio = FULL.audio }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const canvas = useRef(null);
@@ -31,12 +31,13 @@ export const Signature = () => {
     };
   }, [width, height, handle]);
 
-  const t = frame / fps;
+  const tau = frame / fps; // temps vidéo
+  const t = start + tau * speed; // temps de scène
   useLayoutEffect(() => {
     if (engine) engine.renderAt(t);
   }, [engine, t]);
 
-  const veil = Math.max(sm(11.3, 12, t), 1 - sm(0, 0.45, t));
+  const veil = Math.max(sm(duration - 0.7, duration, tau), 1 - sm(0, fadeIn, tau));
   const sig = sm(8.6, 9.4, t) * (1 - sm(10.9, 11.4, t));
   const unit = Math.min(width, height) / 1080;
 
@@ -53,7 +54,7 @@ export const Signature = () => {
         autoflowgp.com
       </div>
       <AbsoluteFill style={{ backgroundColor: rgb(NACRE.bgTop), opacity: veil }} />
-      <Audio src={staticFile('audio/signature-nacre.wav')} />
+      <Audio src={staticFile(audio)} />
     </AbsoluteFill>
   );
 };

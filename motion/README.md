@@ -13,6 +13,10 @@ pendant qu'un reflet glisse sur les lettres.
 |---|---|---|
 | `out/autoflowgp-signature-nacre-16x9.mp4` | 1920 × 1080, 60 i/s, 12 s | LinkedIn, YouTube, site |
 | `out/autoflowgp-signature-nacre-9x16.mp4` | 1080 × 1920, 60 i/s, 12 s | Reels, TikTok, Shorts, stories |
+| `out/autoflowgp-signature-nacre-6s-16x9.mp4` | 1920 × 1080, 60 i/s, 6 s | Ouverture et fermeture de vidéos |
+| `out/autoflowgp-signature-nacre-6s-9x16.mp4` | 1080 × 1920, 60 i/s, 6 s | Stories, photo de profil animée |
+
+La version courte n'accélère pas la vidéo par deux (trop agressif pour les yeux) : elle commence dans le flux à son approche du mot (scène à 2,4 s), joue l'action à ×1,25 et raccourcit la fin. Sa bande-son est recalculée sur ce rythme. Les montages sont définis par `FULL` et `SHORT` dans `src/scene/timeline.js`.
 
 ### Chronologie (12 s)
 
@@ -29,8 +33,8 @@ pendant qu'un reflet glisse sur les lettres.
 ```bash
 npm install
 npm run studio      # aperçu interactif dans le navigateur
-npm run audio       # régénère la bande-son (public/audio/signature-nacre.wav)
-npm run render      # bande-son + les deux vidéos dans out/
+npm run audio       # régénère les bandes-son (public/audio/)
+npm run render      # bandes-son + les quatre vidéos dans out/
 ```
 
 Sur un serveur sans carte graphique, ajouter `--gl=swangle` aux commandes `remotion render`.

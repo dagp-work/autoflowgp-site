@@ -9,7 +9,9 @@
     "audio": "node scripts/render-audio.mjs",
     "render:169": "remotion render src/index.jsx Signature-Nacre-16x9 out/autoflowgp-signature-nacre-16x9.mp4",
     "render:916": "remotion render src/index.jsx Signature-Nacre-9x16 out/autoflowgp-signature-nacre-9x16.mp4",
-    "render": "npm run audio && npm run render:169 && npm run render:916"
+    "render:6s-169": "remotion render src/index.jsx Signature-Nacre-6s-16x9 out/autoflowgp-signature-nacre-6s-16x9.mp4",
+    "render:6s-916": "remotion render src/index.jsx Signature-Nacre-6s-9x16 out/autoflowgp-signature-nacre-6s-9x16.mp4",
+    "render": "npm run audio && npm run render:169 && npm run render:916 && npm run render:6s-169 && npm run render:6s-916"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "5.2.7",

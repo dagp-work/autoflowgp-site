@@ -5,6 +5,10 @@ export const D = 12; // durée totale (s)
 export const TB = 6.9; // instant du rebond (impact)
 export const NL = 10; // nombre de lettres dans « AutoFlowGP »
 
+// Montages : temps vidéo τ → temps de scène t = start + τ × speed
+export const FULL = { duration: 12, start: 0, speed: 1, fadeIn: 0.45, audio: 'audio/signature-nacre.wav' };
+export const SHORT = { duration: 6, start: 2.4, speed: 1.25, fadeIn: 0.3, audio: 'audio/signature-nacre-6s.wav' };
+
 export const cl = (v, a, b) => Math.min(b, Math.max(a, v));
 export const lerp = (a, b, t) => a + (b - a) * t;
 export const sm = (a, b, v) => {

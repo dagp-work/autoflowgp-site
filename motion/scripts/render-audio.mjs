@@ -7,28 +7,30 @@ import { createRequire } from 'node:module';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
-import { D, TB, NL, cl, sm, flowAt, settleTime, makeCamera, fitDistance } from '../src/scene/timeline.js';
+import { TB, NL, cl, sm, flowAt, settleTime, makeCamera, fitDistance, FULL, SHORT } from '../src/scene/timeline.js';
 
 const require = createRequire(import.meta.url);
 const THREE = require('three');
 const here = dirname(fileURLToPath(import.meta.url));
-const out = resolve(here, '../public/audio/signature-nacre.wav');
-
-/* Courbes de pilotage, 60 points par seconde */
+/* Courbes de pilotage, 60 points par seconde, exprimées en temps vidéo τ */
 const RATE = 60;
 const fit = fitDistance(11.9, 16 / 9);
 const camera = makeCamera(THREE, () => fit);
-const curve = [];
-let prev = camera.smoothPose(0).pos;
-for (let i = 0; i <= D * RATE; i++) {
-  const t = i / RATE;
-  const { pos } = camera.smoothPose(t);
-  const speed = Math.hypot(pos[0] - prev[0], pos[1] - prev[1], pos[2] - prev[2]) * RATE;
-  prev = pos;
-  const intensity = Math.min(1, flowAt(t) * 1.3 + (1 - sm(5.5, 7, t)) * 0.25 + Math.min(speed / 40, 0.3));
-  curve.push([t, intensity, cl(pos[0] / 8, -0.8, 0.8)]);
+function plan(cut) {
+  const curve = [];
+  let prev = camera.smoothPose(cut.start).pos;
+  for (let i = 0; i <= cut.duration * RATE; i++) {
+    const tau = i / RATE, t = cut.start + tau * cut.speed;
+    const { pos } = camera.smoothPose(t);
+    const speed = Math.hypot(pos[0] - prev[0], pos[1] - prev[1], pos[2] - prev[2]) * RATE;
+    prev = pos;
+    const intensity = Math.min(1, flowAt(t) * 1.3 + (1 - sm(5.5, 7, t)) * 0.25 + Math.min(speed / 40, 0.3));
+    curve.push([tau, intensity, cl(pos[0] / 8, -0.8, 0.8), t]);
+  }
+  const at = (t) => (t - cut.start) / cut.speed;
+  const ticks = [...Array(NL)].map((_, L) => at(settleTime(L)));
+  return { curve, events: { ticks, swell: at(TB - 0.6), impact: at(TB), sheen: at(7.8), D: cut.duration, tauTB: at(TB) } };
 }
-const events = { ticks: [...Array(NL)].map((_, L) => settleTime(L)), swell: TB - 0.6, impact: TB, sheen: 7.8, D, TB };
 
 const synth = async ({ curve, events }) => {
   const SR = 48000, ac = new OfflineAudioContext(2, Math.ceil(events.D * SR), SR);
@@ -53,13 +55,14 @@ const synth = async ({ curve, events }) => {
   ro.forEach((o, i) => { o.type = i ? 'triangle' : 'sine'; o.frequency.value = 170 * (1 + i * 0.007); o.connect(rg); o.start(0); });
   rg.connect(outG); rg.connect(dlIn);
 
-  for (const [t, I, p] of curve) {
+  for (const [tau, I, p, ts] of curve) {
+    const t = tau;
     wg.gain.setTargetAtTime(0.32 * I, t, 0.15);
     bp.frequency.setTargetAtTime(350 + 3000 * I, t, 0.2);
-    pg.gain.setTargetAtTime((0.05 + 0.07 * I) * (1 - sm(10.8, 11.8, t)) * sm(0, 0.6, t), t, 0.3);
+    pg.gain.setTargetAtTime((0.05 + 0.07 * I) * (1 - sm(events.D - 1.2, events.D - 0.2, t)) * sm(0, 0.6, t), t, 0.3);
     lp.frequency.setTargetAtTime(260 + 2200 * I, t, 0.25);
-    const r = t < events.TB ? sm(0.8, 6.8, t) : 0;
-    rg.gain.setTargetAtTime(0.03 * r, t, t < events.TB ? 0.2 : 0.03);
+    const r = t < events.tauTB ? sm(0.8, 6.8, ts) : 0;
+    rg.gain.setTargetAtTime(0.03 * r, t, t < events.tauTB ? 0.2 : 0.03);
     ro.forEach((o, i) => o.frequency.setTargetAtTime((170 + 620 * r * r) * (1 + i * 0.007), t, 0.1));
     pan.pan.setTargetAtTime(p, t, 0.2);
   }
@@ -67,6 +70,7 @@ const synth = async ({ curve, events }) => {
   const env = (node, t, a, peak, dec, dests) => { const g = ac.createGain(); g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(peak, t + a); g.gain.exponentialRampToValueAtTime(0.0001, t + a + dec); node.connect(g); (dests || [outG]).forEach((d) => g.connect(d)); };
   const ratios = [1, 9 / 8, 5 / 4, 3 / 2, 5 / 3, 2, 9 / 4, 5 / 2, 3, 10 / 3];
   events.ticks.forEach((t, L) => {
+    if (t < 0) return;
     const f = 659.25 * ratios[L], c = ac.createOscillator(), m = ac.createOscillator(), mg = ac.createGain();
     c.frequency.value = f; m.frequency.value = f * 3.01; mg.gain.setValueAtTime(f * 2.2, t); mg.gain.exponentialRampToValueAtTime(1, t + 0.35); m.connect(mg).connect(c.frequency);
     const p = ac.createStereoPanner(); p.pan.value = -0.75 + 1.5 * L / 9; c.connect(p); env(p, t, 0.003, 0.05, 0.6, [outG, dlIn, revIn]);
@@ -95,15 +99,17 @@ const synth = async ({ curve, events }) => {
 
 const browser = await chromium.launch(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {});
 const page = await browser.newPage();
-const { b64, SR, peak } = await page.evaluate(synth, { curve, events });
+for (const cut of [FULL, SHORT]) {
+  const { b64, SR, peak } = await page.evaluate(synth, plan(cut));
+  const data = Buffer.from(b64, 'base64');
+  const header = Buffer.alloc(44);
+  header.write('RIFF', 0); header.writeUInt32LE(36 + data.length, 4); header.write('WAVE', 8);
+  header.write('fmt ', 12); header.writeUInt32LE(16, 16); header.writeUInt16LE(1, 20); header.writeUInt16LE(2, 22);
+  header.writeUInt32LE(SR, 24); header.writeUInt32LE(SR * 4, 28); header.writeUInt16LE(4, 32); header.writeUInt16LE(16, 34);
+  header.write('data', 36); header.writeUInt32LE(data.length, 40);
+  const out = resolve(here, '../public', cut.audio);
+  mkdirSync(dirname(out), { recursive: true });
+  writeFileSync(out, Buffer.concat([header, data]));
+  console.log(`Bande-son écrite : ${out} (${(data.length / SR / 4).toFixed(2)} s, crête ${peak.toFixed(2)})`);
+}
 await browser.close();
-
-const data = Buffer.from(b64, 'base64');
-const header = Buffer.alloc(44);
-header.write('RIFF', 0); header.writeUInt32LE(36 + data.length, 4); header.write('WAVE', 8);
-header.write('fmt ', 12); header.writeUInt32LE(16, 16); header.writeUInt16LE(1, 20); header.writeUInt16LE(2, 22);
-header.writeUInt32LE(SR, 24); header.writeUInt32LE(SR * 4, 28); header.writeUInt16LE(4, 32); header.writeUInt16LE(16, 34);
-header.write('data', 36); header.writeUInt32LE(data.length, 40);
-mkdirSync(dirname(out), { recursive: true });
-writeFileSync(out, Buffer.concat([header, data]));
-console.log(`Bande-son écrite : ${out} (${(data.length / SR / 4).toFixed(2)} s, crête ${peak.toFixed(2)})`);
