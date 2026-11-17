@@ -1,8 +1,8 @@
 ---
 date: 2026-10-29T10:00:00
 layout: layouts/post.njk
-title: "Groupes et privatisations : automatiser les demandes"
-description: "Répondez vite aux demandes de groupes et de privatisation : formulaire, devis, acompte Stripe et relances automatiques, sans y passer vos soirées."
+title: "Groupes et privatisations : automatiser les demandes"
+description: "Répondez vite aux demandes de groupes et de privatisation : formulaire, devis, acompte Stripe et relances automatiques, sans y passer vos soirées."
 ---
 
 # Groupes et privatisations : automatiser les demandes de votre restaurant

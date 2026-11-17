@@ -1,8 +1,8 @@
 ---
 date: 2026-10-29T13:00:00
 layout: layouts/post.njk
-title: "Fiche client numérique pour salon : par où commencer"
-description: "Formules couleur, prestations, préférences : une fiche client numérique dans Notion, remplie automatiquement, pour un salon mieux organisé."
+title: "Fiche client numérique pour salon : par où commencer"
+description: "Formules couleur, prestations, préférences : une fiche client numérique dans Notion, remplie automatiquement, pour un salon mieux organisé."
 ---
 
 # Fiche client numérique pour salon : par où commencer

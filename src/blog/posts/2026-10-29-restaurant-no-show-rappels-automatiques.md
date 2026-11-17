@@ -1,8 +1,8 @@
 ---
 date: 2026-10-29T12:00:00
 layout: layouts/post.njk
-title: "No-show au restaurant : automatiser les rappels"
-description: "Réduisez les tables vides : rappels de réservation automatiques par SMS ou email, confirmation en un clic et liste d’attente, sans changer d’outil."
+title: "No-show au restaurant : automatiser les rappels"
+description: "Réduisez les tables vides : rappels de réservation automatiques par SMS ou email, confirmation en un clic et liste d’attente, sans changer d’outil."
 ---
 
 # No-show au restaurant : automatiser les rappels de réservation

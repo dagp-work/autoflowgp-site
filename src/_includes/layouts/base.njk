@@ -3,13 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ title or site.name }}</title>
-  <meta name="description" content="{{ description or site.description }}" />
+  {# Titre d'onglet / Google : ajoute « | AutoFlowGP » quand la marque n'y est pas et que ça tient en 60 caractères #}
+  {% set pageTitle = title or site.name %}
+  {% if site.name not in pageTitle and (pageTitle | length) + (site.name | length) + 3 <= 60 %}{% set pageTitle = pageTitle + " | " + site.name %}{% endif %}
+  {% set pageDescription = description or site.description %}
+  <title>{{ pageTitle }}</title>
+  <meta name="description" content="{{ pageDescription }}" />
   {# URL officielle : évite que Google indexe aussi les versions de test *.netlify.app #}
   <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
   {% if noindex %}<meta name="robots" content="noindex" />{% endif %}
   {# Validation Google Search Console (propriété https://www.autoflowgp.com/) — ne pas supprimer #}
   <meta name="google-site-verification" content="BBjvKVB3gQTOsTLPLL2l1PUMvHmmH4TGztjl3GWPwRw" />
+  {# Aperçu quand un lien est partagé (WhatsApp, LinkedIn, Facebook, X…) #}
+  <meta property="og:type" content="{{ 'article' if page.url.startsWith('/blog/posts/') else 'website' }}" />
+  <meta property="og:site_name" content="{{ site.name }}" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="{{ pageTitle }}" />
+  <meta property="og:description" content="{{ pageDescription }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}/assets/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
@@ -17,10 +34,11 @@
   <script defer src="/assets/js/alpine.min.js"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-black dark:text-slate-200">
+  <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] btn-primary">Aller au contenu</a>
   <header x-data="{ open: false }" @keydown.escape.window="open = false" class="sticky top-0 z-50 border-b bg-white/80 backdrop-blur dark:bg-black/80">
     <nav class="container-xl flex items-center justify-between h-16" aria-label="Navigation principale">
       <a href="/" class="flex items-center gap-2">
-        <img src="/assets/img/logo.png" alt="AutoFlowGP" class="h-16 w-auto" />
+        <img src="/assets/img/logo-128.png" alt="Logo AutoFlowGP" width="40" height="40" class="h-10 w-10 rounded-lg" />
         <span class="font-semibold">AutoFlowGP</span>
       </a>
 
@@ -48,7 +66,7 @@
     </ul>
   </header>
 
-  <main class="container-xl py-10 min-h-[70vh]">
+  <main id="contenu" class="container-xl py-10 min-h-[70vh]">
     {{ content | safe }}
   </main>
 

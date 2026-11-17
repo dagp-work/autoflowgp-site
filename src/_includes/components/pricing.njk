@@ -8,15 +8,15 @@
     features: ["Conseil stratégique","Automatisations avancées","CRM + Reporting","Formation complète + support"] }
 ] %}
 {% for p in plans %}
-  <div class="card">
+  <div class="card flex flex-col">
     <h3 class="text-xl font-semibold">{{ p.name }}</h3>
     <p class="text-3xl mt-2">{{ p.price }}</p>
-    <ul class="mt-4 space-y-2">
+    <ul class="mt-4 mb-6 space-y-2">
       {% for f in p.features %}
-      <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-primary-600"></span>{{ f }}</li>
+      <li class="flex items-start gap-2"><span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary-600" aria-hidden="true"></span>{{ f }}</li>
       {% endfor %}
     </ul>
-    <a href="/contact/" class="btn-primary mt-6">Demander un devis</a>
+    <a href="/contact/" class="btn-primary mt-auto self-start">Demander un devis</a>
   </div>
 {% endfor %}
 </section>

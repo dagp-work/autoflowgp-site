@@ -1,8 +1,8 @@
 ---
 date: 2026-10-29T11:00:00
 layout: layouts/post.njk
-title: "Avis Google restaurant : les demander automatiquement"
-description: "Obtenez plus d’avis Google pour votre restaurant : une demande envoyée au bon moment, automatiquement, dans le respect des règles de Google."
+title: "Avis Google restaurant : les demander automatiquement"
+description: "Obtenez plus d’avis Google pour votre restaurant : une demande envoyée au bon moment, automatiquement, dans le respect des règles de Google."
 ---
 
 # Avis Google pour votre restaurant : les demander automatiquement

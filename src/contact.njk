@@ -4,12 +4,21 @@ description: "Décrivez votre besoin d’automatisation à AutoFlowGP. Réponse 
 layout: "layout.njk"
 ---
 <h1 class="text-3xl font-bold">Contact</h1>
-<p class="mt-3 text-slate-700 dark:text-slate-300">Décrivez votre besoin. Réponse sous 24–48 h ouvrées.</p>
+<p class="mt-3 text-slate-700 dark:text-slate-300">Décrivez la tâche qui vous prend du temps et les outils que vous utilisez. Réponse sous 24–48&nbsp;h ouvrées.</p>
 <form name="contact" method="POST" action="/merci/" data-netlify="true" netlify-honeypot="site-web" class="mt-6 max-w-xl space-y-4">
   <input type="hidden" name="form-name" value="contact" />
   <p class="hidden"><label>Ne pas remplir : <input name="site-web" /></label></p>
-  <input type="text" name="name" placeholder="Nom" required class="field" />
-  <input type="email" name="email" placeholder="Email" required class="field" />
-  <textarea name="message" placeholder="Votre message" rows="6" required class="field"></textarea>
+  <div>
+    <label for="contact-nom" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Nom</label>
+    <input id="contact-nom" type="text" name="name" autocomplete="name" required class="field mt-1" />
+  </div>
+  <div>
+    <label for="contact-email" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Email</label>
+    <input id="contact-email" type="email" name="email" autocomplete="email" required class="field mt-1" />
+  </div>
+  <div>
+    <label for="contact-message" class="block text-sm font-medium text-slate-700 dark:text-slate-300">Votre besoin</label>
+    <textarea id="contact-message" name="message" rows="6" required class="field mt-1" placeholder="Ex. : je relance mes devis à la main chaque semaine, je voudrais que ce soit automatique."></textarea>
+  </div>
   <button type="submit" class="btn-primary">Envoyer</button>
 </form>

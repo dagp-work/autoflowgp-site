@@ -2,7 +2,7 @@
 date: 2026-10-29T17:00:00
 layout: layouts/post.njk
 title: "Messages d’accueil automatiques pour gîtes et activités"
-description: "Itinéraire, horaires, code d’accès, équipement, avis : automatisez les messages avant et après le séjour ou l’activité de vos clients."
+description: "Itinéraire, horaires, code d’accès, équipement, avis : automatisez les messages avant et après le séjour ou l’activité de vos clients."
 ---
 
 # Messages d’accueil automatiques : avant, pendant et après le séjour

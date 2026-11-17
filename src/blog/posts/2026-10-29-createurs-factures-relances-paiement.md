@@ -1,8 +1,8 @@
 ---
 date: 2026-10-29T20:00:00
 layout: layouts/post.njk
-title: "Créateurs, freelances : factures et relances auto"
-description: "Photographes, illustrateurs, créateurs : devis, acompte, facture et relances de paiement automatiques pour être payé à temps sans relancer à la main."
+title: "Créateurs, freelances : factures et relances auto"
+description: "Photographes, illustrateurs, créateurs : devis, acompte, facture et relances de paiement automatiques pour être payé à temps sans relancer à la main."
 ---
 
 # Créateurs et freelances créatifs : être payé à temps sans relancer à la main

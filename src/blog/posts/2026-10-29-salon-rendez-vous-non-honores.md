@@ -1,8 +1,8 @@
 ---
 date: 2026-10-29T15:00:00
 layout: layouts/post.njk
-title: "Rendez-vous non honorés en salon : les éviter"
-description: "Coiffeurs, instituts, barbiers : réduisez les rendez-vous non honorés avec rappels automatiques, liste d’attente et acompte en ligne."
+title: "Rendez-vous non honorés en salon : les éviter"
+description: "Coiffeurs, instituts, barbiers : réduisez les rendez-vous non honorés avec rappels automatiques, liste d’attente et acompte en ligne."
 ---
 
 # Rendez-vous non honorés en salon : rappels, liste d’attente et acompte

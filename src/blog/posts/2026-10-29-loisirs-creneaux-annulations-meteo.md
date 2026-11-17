@@ -1,8 +1,8 @@
 ---
 date: 2026-10-29T16:00:00
 layout: layouts/post.njk
-title: "Activités de loisirs : créneaux et annulations météo"
-description: "Kayak, escape game, visites, ateliers : gérez créneaux, places, annulations météo et remboursements automatiquement, sans y passer vos soirées."
+title: "Activités de loisirs : créneaux et annulations météo"
+description: "Kayak, escape game, visites, ateliers : gérez créneaux, places, annulations météo et remboursements automatiquement, sans y passer vos soirées."
 ---
 
 # Activités de loisirs : créneaux, places et annulations météo sans stress

@@ -1,8 +1,8 @@
 ---
 date: 2026-10-29T21:00:00
 layout: layouts/post.njk
-title: "Créateurs : gérer les collaborations avec les marques"
-description: "Demandes de partenariat noyées dans vos messages ? Centralisez, qualifiez et suivez vos collaborations avec les marques, du premier contact au paiement."
+title: "Créateurs : gérer les collaborations avec les marques"
+description: "Demandes de partenariat noyées dans vos messages ? Centralisez, qualifiez et suivez vos collaborations avec les marques, du premier contact au paiement."
 ---
 
 # Créateurs de contenu : ne plus perdre une collaboration avec une marque
