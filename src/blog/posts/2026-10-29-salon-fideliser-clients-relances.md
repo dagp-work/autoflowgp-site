@@ -2,7 +2,7 @@
 date: 2026-10-29T14:00:00
 layout: layouts/post.njk
 title: "Fidéliser les clients de son salon automatiquement"
-description: "Coiffure, beauté, bien-être : faites revenir vos clients au bon moment avec des relances automatiques adaptées à chaque prestation."
+description: "Coiffure, beauté, bien-être : faites revenir vos clients au bon moment avec des relances automatiques adaptées à chaque prestation."
 ---
 
 # Fidéliser les clients de son salon : la relance automatique au bon moment

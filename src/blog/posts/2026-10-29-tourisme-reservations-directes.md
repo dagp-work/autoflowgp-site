@@ -1,8 +1,8 @@
 ---
 date: 2026-10-29T18:00:00
 layout: layouts/post.njk
-title: "Gîte, activité : plus de réservations en direct"
-description: "Gîtes, chambres d’hôtes, activités de loisirs : prenez des réservations en direct avec acompte en ligne, sans double réservation ni commission."
+title: "Gîte, activité : plus de réservations en direct"
+description: "Gîtes, chambres d’hôtes, activités de loisirs : prenez des réservations en direct avec acompte en ligne, sans double réservation ni commission."
 ---
 
 # Gîte, chambre d’hôtes, activité : prendre plus de réservations en direct

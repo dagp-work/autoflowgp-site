@@ -24,3 +24,10 @@
 
 /* Alpine.js : masque les éléments x-cloak avant le chargement du script */
 [x-cloak] { display: none !important; }
+
+/* Focus clavier visible partout (accessibilité), discret à la souris */
+@layer base {
+  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    @apply outline-none ring-2 ring-primary-700 ring-offset-2 ring-offset-slate-50 dark:ring-primary-400 dark:ring-offset-black;
+  }
+}

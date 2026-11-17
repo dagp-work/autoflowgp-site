@@ -2,7 +2,7 @@
 date: 2026-10-29T19:00:00
 layout: layouts/post.njk
 title: "Planning éditorial automatisé pour créateurs"
-description: "Idées, tournage, montage, publication : un planning éditorial dans Notion qui organise vos contenus et automatise les tâches répétitives."
+description: "Idées, tournage, montage, publication : un planning éditorial dans Notion qui organise vos contenus et automatise les tâches répétitives."
 ---
 
 # Planning éditorial automatisé : publier régulièrement sans y passer ses soirées
