@@ -16,8 +16,10 @@
   <link rel="stylesheet" href="/assets/main.css" />
   <script defer src="/assets/js/alpine.min.js"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-black dark:text-slate-200">
-  <header x-data="{ open: false }" @keydown.escape.window="open = false" class="sticky top-0 z-50 border-b bg-white/80 backdrop-blur dark:bg-black/80">
+<body class="bg-slate-50 text-slate-800 dark:bg-black dark:text-slate-200 antialiased">
+  {# Fond du site : plan d'architecte + halos (décoratif, voir tailwind.css) #}
+  <div class="ambient" aria-hidden="true"></div>
+  <header x-data="{ open: false }" @keydown.escape.window="open = false" class="sticky top-0 z-50 border-b border-white/60 bg-white/60 backdrop-blur-xl backdrop-saturate-150 dark:border-white/10 dark:bg-black/60">
     <nav class="container-xl flex items-center justify-between h-16" aria-label="Navigation principale">
       <a href="/" class="flex items-center gap-2">
         <img src="/assets/img/logo.png" alt="AutoFlowGP" class="h-16 w-auto" />
@@ -41,7 +43,7 @@
 
     <!-- Menu mobile -->
     <ul id="menu-mobile" x-show="open" x-cloak x-transition.opacity @click.outside="open = false"
-        class="md:hidden border-t bg-white dark:bg-black container-xl py-2">
+        class="md:hidden border-t bg-white/90 backdrop-blur-xl dark:bg-black/90 container-xl py-2">
       {% for item in site.navigation %}
       <li><a href="{{ item.href }}" @click="open = false" class="block py-3 text-lg hover:text-primary-700 dark:hover:text-primary-300{% if page.url == item.href %} text-primary-700 dark:text-primary-400 font-medium{% endif %}">{{ item.label }}</a></li>
       {% endfor %}
@@ -52,10 +54,19 @@
     {{ content | safe }}
   </main>
 
-  <footer class="mt-16 border-t py-10 text-sm text-slate-500 dark:text-slate-400">
-    <div class="container-xl flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
-      <p>© {{ "now" | date("yyyy") }} {{ site.name }}. Tous droits réservés.</p>
-      <p><a href="/" class="hover:text-primary-700 dark:hover:text-primary-300">Mentions légales</a></p>
+  <footer class="mt-24 border-t pt-12 pb-10 text-sm text-slate-500 dark:text-slate-400 overflow-hidden">
+    <div class="container-xl">
+      <div class="brand-rule w-24" aria-hidden="true"></div>
+      <pre class="ascii mt-6 hidden sm:block" aria-hidden="true">
+ ┌──────────┐      ┌──────────┐      ┌──────────┐
+ │ demande  │ ───▶ │ scénario │ ───▶ │  c’est   │
+ │ client   │      │  Make    │      │  fait ✓  │
+ └──────────┘      └──────────┘      └──────────┘</pre>
+      <p class="mt-8 text-giant text-outline text-slate-300 dark:text-neutral-800 select-none" aria-hidden="true">AutoFlowGP</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+        <p>© {{ "now" | date("yyyy") }} {{ site.name }}. Tous droits réservés.</p>
+        <p class="font-mono text-xs">// Île-de-France · <a href="/contact/" class="hover:text-primary-700 dark:hover:text-primary-300">Parler de votre cas</a> · <a href="/" class="hover:text-primary-700 dark:hover:text-primary-300">Mentions légales</a></p>
+      </div>
     </div>
   </footer>
 </body>

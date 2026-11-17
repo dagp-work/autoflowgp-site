@@ -2,25 +2,242 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Thème sombre : suit le réglage de l'appareil (prefers-color-scheme).
-   Fond noir pour que le logo (sur fond noir) se fonde dans l'en-tête. */
+/* ==========================================================================
+   AutoFlowGP — système visuel « Blueprint × Liquid Glass »
+   Hiérarchie (ne pas tout empiler au même endroit) :
+   - Fond de site      : plan d'architecte (blueprint) + halos de couleur
+   - Titres d'accroche : typo géante (+ contour de lignes en second niveau)
+   - Contenus          : verre liquide (.card / .glass), grilles bento
+   - Mise en avant     : verre cannelé (.glass-fluted), relief doux (.soft-3d)
+   - Accents           : trame halftone, courbes de niveau, ASCII, annotations
+   Bleu = action (boutons, liens). Dégradé du logo = accent décoratif uniquement.
+   ========================================================================== */
+
 @layer base {
-  :root { color-scheme: light dark; }
+  :root {
+    color-scheme: light dark;
+    /* Dégradé du logo (turquoise → vert d'eau → corail → orange → jaune) */
+    --brand-1: #18DCA5; --brand-2: #60C5A0; --brand-3: #EB8E6E; --brand-4: #F29D56; --brand-5: #EECB2C;
+    --brand-grad: linear-gradient(100deg, var(--brand-1), var(--brand-2) 30%, var(--brand-3) 62%, var(--brand-4) 80%, var(--brand-5));
+
+    --grid-minor: rgb(37 99 235 / 0.06);
+    --grid-major: rgb(37 99 235 / 0.11);
+    --glass-bg: rgb(255 255 255 / 0.62);
+    --glass-border: rgb(255 255 255 / 0.85);
+    --glass-edge: rgb(15 23 42 / 0.08);
+    --glass-hi: rgb(255 255 255 / 0.9);
+    --glass-shadow: 0 1px 2px rgb(15 23 42 / 0.04), 0 12px 32px -12px rgb(15 23 42 / 0.18);
+    --ink-dots: rgb(37 99 235 / 0.35);
+    --contour: rgb(37 99 235 / 0.16);
+  }
   @media (prefers-color-scheme: dark) {
     *, ::before, ::after { border-color: theme("colors.neutral.800"); }
+    :root {
+      --grid-minor: rgb(96 165 250 / 0.05);
+      --grid-major: rgb(96 165 250 / 0.10);
+      --glass-bg: rgb(23 23 23 / 0.55);
+      --glass-border: rgb(255 255 255 / 0.10);
+      --glass-edge: rgb(255 255 255 / 0.06);
+      --glass-hi: rgb(255 255 255 / 0.12);
+      --glass-shadow: 0 12px 40px -16px rgb(0 0 0 / 0.8);
+      --ink-dots: rgb(96 165 250 / 0.35);
+      --contour: rgb(96 165 250 / 0.18);
+    }
+  }
+  ::selection { background: rgb(37 99 235 / 0.2); }
+}
+
+/* --------------------------------------------------------------------------
+   Utilitaires historiques (noms conservés : utilisés partout dans le site)
+   -------------------------------------------------------------------------- */
+.container-xl { @apply max-w-6xl mx-auto px-4; }
+
+/* .card = verre liquide : surface givrée translucide, reflet sur l'arête haute */
+.card, .glass {
+  @apply relative rounded-3xl p-6;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 var(--glass-hi), 0 0 0 1px var(--glass-edge), var(--glass-shadow);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  backdrop-filter: blur(18px) saturate(170%);
+}
+
+/* Boutons : relief doux (soft 3D) — même bleu dans les deux thèmes */
+.btn-primary {
+  @apply inline-block bg-primary-700 text-white font-medium px-5 py-2.5 rounded-xl transition;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.25), inset 0 -2px 0 rgb(0 0 0 / 0.18), 0 6px 16px -6px rgb(37 99 235 / 0.6);
+}
+.btn-primary:hover { @apply bg-primary-800 -translate-y-px; }
+.btn-primary:active { @apply translate-y-0; box-shadow: inset 0 2px 4px rgb(0 0 0 / 0.25); }
+.btn-ghost {
+  @apply inline-block border border-slate-300 text-slate-800 px-5 py-2.5 rounded-xl transition hover:border-primary-600 dark:border-neutral-700 dark:text-slate-100 dark:hover:border-primary-400;
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+
+.field { @apply w-full border border-slate-300 rounded-xl px-4 py-3 bg-white/80 text-slate-800 placeholder:text-slate-400 dark:bg-neutral-900/70 dark:border-neutral-700 dark:text-slate-100 dark:placeholder:text-slate-500; }
+.field:focus { @apply outline-none ring-2 ring-primary-600 border-transparent; }
+
+/* --------------------------------------------------------------------------
+   Fond du site : plan (blueprint) qui s'estompe + halos de couleur
+   -------------------------------------------------------------------------- */
+.ambient { @apply pointer-events-none fixed inset-0 -z-10 overflow-hidden; }
+.ambient::before { /* grille de plan : petits carreaux + grands carreaux */
+  content: ""; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+    linear-gradient(var(--grid-minor) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 30%, transparent 75%);
+}
+.ambient::after { /* halos : bleu (action) + dégradé logo (accent) */
+  content: ""; position: absolute; inset: -20% -10% auto; height: 90vh;
+  background:
+    radial-gradient(40% 50% at 15% 30%, rgb(37 99 235 / 0.16), transparent 70%),
+    radial-gradient(30% 40% at 85% 15%, rgb(24 220 165 / 0.16), transparent 70%),
+    radial-gradient(28% 36% at 70% 60%, rgb(242 157 86 / 0.12), transparent 70%);
+  filter: blur(20px);
+}
+
+/* Bloc plan local : grille + croix de repère aux coins */
+.blueprint {
+  background-image:
+    linear-gradient(var(--grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.crosshairs { position: relative; }
+.crosshairs::before, .crosshairs::after {
+  content: "+"; position: absolute; font: 400 14px/1 theme("fontFamily.mono");
+  @apply text-primary-700/50 dark:text-primary-400/50;
+}
+.crosshairs::before { top: -7px; left: -5px; }
+.crosshairs::after { bottom: -7px; right: -5px; }
+
+/* --------------------------------------------------------------------------
+   Typographie
+   -------------------------------------------------------------------------- */
+.text-giant { /* « giant type » : titre d'accroche plein écran */
+  font-size: clamp(2.9rem, 10.5vw, 8.5rem);
+  line-height: 0.9; letter-spacing: -0.045em; font-weight: 900;
+  text-wrap: balance;
+}
+.title-xl { /* h1 des pages intérieures */
+  font-size: clamp(2.25rem, 6vw, 4.25rem);
+  line-height: 0.98; letter-spacing: -0.035em; font-weight: 800;
+  text-wrap: balance;
+}
+.text-outline { /* contour de lignes : lettres en trait seul (le trait prend la couleur du texte) */
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px currentColor;
+}
+@supports not (-webkit-text-stroke: 1px black) { .text-outline { -webkit-text-fill-color: currentColor; } }
+.text-brand { /* dégradé du logo dans le texte (gros titres seulement) */
+  background: var(--brand-grad);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.eyebrow { /* annotation de plan : mono, majuscules */
+  @apply font-mono text-xs uppercase tracking-[0.18em] text-primary-700 dark:text-primary-400;
+}
+.ascii { /* ASCII art : toujours aria-hidden="true" côté HTML */
+  @apply font-mono text-[11px] leading-[1.35] whitespace-pre text-slate-500 dark:text-slate-400 select-none;
+}
+
+/* --------------------------------------------------------------------------
+   Surfaces spéciales
+   -------------------------------------------------------------------------- */
+/* Verre cannelé (fluted glass) : nervures verticales qui diffractent le fond */
+.glass-fluted { @apply relative overflow-hidden; }
+.glass-fluted::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  background: repeating-linear-gradient(90deg,
+    rgb(255 255 255 / 0.00) 0px, rgb(255 255 255 / 0.35) 6px,
+    rgb(255 255 255 / 0.00) 12px, rgb(15 23 42 / 0.05) 14px, rgb(255 255 255 / 0.00) 16px);
+  mix-blend-mode: overlay;
+}
+@media (prefers-color-scheme: dark) {
+  .glass-fluted::before {
+    background: repeating-linear-gradient(90deg,
+      rgb(255 255 255 / 0.00) 0px, rgb(255 255 255 / 0.07) 6px,
+      rgb(255 255 255 / 0.00) 12px, rgb(0 0 0 / 0.25) 14px, rgb(255 255 255 / 0.00) 16px);
+    mix-blend-mode: normal;
   }
 }
 
-/* utilitaires perso */
-.container-xl { @apply max-w-6xl mx-auto px-4; }
-.card { @apply rounded-2xl shadow-md p-6 bg-white dark:bg-neutral-900 dark:shadow-none dark:ring-1 dark:ring-neutral-800; }
+/* Trame halftone : points qui s'estompent en diagonale */
+.halftone { position: relative; }
+.halftone::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  background-image: radial-gradient(var(--ink-dots) 1.2px, transparent 1.6px);
+  background-size: 9px 9px;
+  -webkit-mask-image: linear-gradient(135deg, transparent 35%, #000 100%);
+  mask-image: linear-gradient(135deg, transparent 35%, #000 100%);
+}
 
-/* Boutons */
-.btn-primary { @apply inline-block bg-primary-700 hover:bg-primary-800 text-white font-medium px-4 py-2 rounded-lg transition; }
-.btn-ghost { @apply inline-block border border-slate-300 text-slate-800 px-4 py-2 rounded-lg transition hover:border-primary-600 hover:bg-slate-100 dark:border-neutral-700 dark:text-slate-100 dark:hover:border-primary-400 dark:hover:bg-neutral-800; }
+/* Courbes de niveau (lignes de contour topographiques) */
+.contour-lines { position: relative; }
+.contour-lines::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  background: var(--contour);
+  -webkit-mask: url("/assets/img/contour.svg") center / cover no-repeat;
+  mask: url("/assets/img/contour.svg") center / cover no-repeat;
+}
 
-/* Champs de formulaire */
-.field { @apply w-full border border-slate-300 rounded-xl px-4 py-3 bg-white text-slate-800 placeholder:text-slate-400 dark:bg-neutral-900 dark:border-neutral-700 dark:text-slate-100 dark:placeholder:text-slate-500; }
+/* Relief doux (soft 3D / claymorphism) */
+.soft-3d {
+  box-shadow:
+    inset 0 2px 1px rgb(255 255 255 / 0.7), inset 0 -6px 12px rgb(15 23 42 / 0.08),
+    0 18px 30px -18px rgb(15 23 42 / 0.35);
+}
+@media (prefers-color-scheme: dark) {
+  .soft-3d { box-shadow: inset 0 1px 1px rgb(255 255 255 / 0.12), inset 0 -8px 16px rgb(0 0 0 / 0.5), 0 20px 40px -20px rgb(0 0 0 / 0.9); }
+}
+
+/* Sphère 3D douce, purement décorative */
+.orb {
+  @apply rounded-full;
+  background:
+    radial-gradient(circle at 32% 28%, rgb(255 255 255 / 0.95), transparent 22%),
+    radial-gradient(circle at 70% 75%, rgb(242 157 86 / 0.75), transparent 45%),
+    radial-gradient(circle at 30% 70%, rgb(24 220 165 / 0.8), transparent 50%),
+    radial-gradient(circle at 50% 50%, #3B82F6, #1D4ED8 70%);
+  box-shadow: inset -14px -18px 40px rgb(15 23 42 / 0.35), inset 10px 10px 30px rgb(255 255 255 / 0.35), 0 30px 60px -20px rgb(37 99 235 / 0.55);
+  animation: orb-float 9s ease-in-out infinite;
+}
+@keyframes orb-float { 50% { transform: translateY(-14px) rotate(6deg); } }
+
+/* Grille bento : tuiles de tailles variées */
+.bento { @apply grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-6; grid-auto-rows: minmax(10rem, auto); }
+
+.text-mega { font-size: clamp(5rem, 16vw, 11rem); }
+
+/* Numéros géants en contour (méthode, étapes) */
+.step-num { @apply text-outline font-black leading-none text-primary-700 dark:text-primary-400; font-size: 4.5rem; letter-spacing: -0.05em; }
+
+/* Liseré dégradé logo (petites touches) */
+.brand-rule { height: 3px; border-radius: 9999px; background: var(--brand-grad); }
+
+/* --------------------------------------------------------------------------
+   Accessibilité & robustesse
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .orb { animation: none; }
+  .btn-primary, .btn-ghost { transition: none; transform: none !important; }
+}
+/* Verre désactivé si le navigateur ne sait pas flouter ou si l'utilisateur réduit la transparence */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .card, .glass, .btn-ghost { @apply bg-white dark:bg-neutral-900; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .card, .glass, .btn-ghost { @apply bg-white dark:bg-neutral-900; backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+@media print {
+  .ambient, .orb, .ascii { display: none !important; }
+  .card, .glass { box-shadow: none; backdrop-filter: none; background: #fff; }
+}
 
 /* Alpine.js : masque les éléments x-cloak avant le chargement du script */
 [x-cloak] { display: none !important; }
