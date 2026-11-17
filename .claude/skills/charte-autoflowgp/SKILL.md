@@ -48,7 +48,7 @@ Ne pas utiliser `text-primary-600` (`#3B82F6`) pour du texte sur fond clair : co
 Les boutons `.btn-primary` sont identiques dans les deux thèmes (`primary-700`, survol `primary-800`, texte blanc).
 
 **Palette du logo** (`public/assets/img/logo.png`, dégradé sur fond noir) : turquoise `#18DCA5` → vert d'eau `#60C5A0` → corail `#EB8E6E` → orange `#F29D56` → jaune `#EECB2C`.
-Elle n'est **pas encore** reprise dans le site (qui est en bleu). Ne pas mélanger les deux de sa propre initiative : c'est une décision de marque à faire valider par l'utilisateur. Pour des supports hors site (réseaux, print), la palette logo est la plus distinctive.
+Décision validée (nov. 2026) : **bleu = action** (boutons, liens, focus), **dégradé du logo = accent décoratif uniquement** (`.text-brand` sur un mot de gros titre, `.brand-rule`, halos du fond, sphère `.orb`). Ne jamais mettre le dégradé sur un bouton, un lien ou du texte courant. Variables CSS : `--brand-1` à `--brand-5` et `--brand-grad` dans `tailwind.css`. Pour des supports hors site (réseaux, print), la palette logo est la plus distinctive.
 
 ## Classes maison (à réutiliser, ne pas réinventer)
 
@@ -61,6 +61,23 @@ Définies dans `src/styles/tailwind.css`, elles gèrent déjà les deux thèmes 
 | `.btn-ghost` | Bouton secondaire (bordure) |
 | `.card` | Bloc arrondi : blanc avec ombre en clair, gris foncé avec liseré en sombre |
 | `.field` | Champ de formulaire (`input`, `textarea`) |
+
+### Système visuel « Blueprint × Liquid Glass »
+
+`.card` est désormais une surface en **verre liquide** (givrée, translucide) ; tout le site en profite. Hiérarchie à respecter — un effet fort par bloc, pas tous ensemble :
+
+| Niveau | Classe | Usage |
+|---|---|---|
+| Fond | `.ambient` (dans le layout) | Grille de plan + halos, déjà posée sur toutes les pages |
+| Titre d'accroche | `.text-giant` (accueil) · `.title-xl` (h1 des autres pages et h2 de l'accueil) | Typo géante |
+| Second niveau du titre | `.text-outline` | Mots en contour de lignes (« sans vous. »), numéros d'étape `.step-num` |
+| Annotation | `.eyebrow` | Sur-titre mono façon plan, commence par `// ` |
+| Contenus | `.card` / `.glass`, grille `.bento` | Tuiles de tailles variées (`lg:col-span-2/4/6`) |
+| Mise en avant | `.glass-fluted`, `.soft-3d` | Verre cannelé + relief doux : 1 ou 2 blocs par page max (pack du milieu, CTA final) |
+| Accents | `.halftone`, `.contour-lines`, `.ascii`, `.crosshairs`, `.orb` | Décor : toujours `aria-hidden="true"` pour l'ASCII et la sphère |
+
+Dans une `.card.glass-fluted` / `.halftone` / `.contour-lines`, mettre `relative` (ou `relative z-10`) sur le contenu pour qu'il passe au-dessus du décor.
+Accessibilité gérée dans le CSS : `prefers-reduced-motion`, `prefers-reduced-transparency`, repli sans `backdrop-filter`, impression.
 
 Pièges connus :
 - `.btn` **n'existe pas** → `.btn-primary` ou `.btn-ghost` (`verif-avant-deploy` le signale).
